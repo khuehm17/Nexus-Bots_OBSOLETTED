@@ -15,3 +15,4 @@
   - https://github.com/mkhuthir/RoboND-Robot-Localization-Project
   - https://automaticaddison.com/sensor-fusion-using-the-ros-robot-pose-ekf-package/
   - https://github.com/cra-ros-pkg/robot_localization
+  - https://github.com/chiprobotics/chip_imu_driver
