@@ -9,4 +9,9 @@
   - https://github.com/DFRobot/DFRobot_BMX160
   - https://github.com/DFRobot/DFRobot_BMP388
 
-## GPS
+## Localization Algorithm
+- Useful resources
+  - https://www.michaelskupien.com/robot-localization-ros
+  - https://github.com/mkhuthir/RoboND-Robot-Localization-Project
+  - https://automaticaddison.com/sensor-fusion-using-the-ros-robot-pose-ekf-package/
+  - https://github.com/cra-ros-pkg/robot_localization
