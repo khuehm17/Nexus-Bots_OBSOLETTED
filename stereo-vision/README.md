@@ -4,6 +4,8 @@
 - Hardware information:
   - https://www.amazon.com/gp/product/B00VG32EC2
 - Useful resources:
+  - https://github.com/niconielsen32/ComputerVision 
+  - https://stereopi.com/blog/projects
 
 ## Test ELP stereo camera with Python
 
