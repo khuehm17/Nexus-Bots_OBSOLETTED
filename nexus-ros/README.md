@@ -1,7 +1,7 @@
 # Nexus ROS
 
 ## Environments information
-- OS version:
-- ROS version:
+- OS version: 20.04
+- ROS version: Noetic
 - Prerequisite packages
   - Rviz version ...
