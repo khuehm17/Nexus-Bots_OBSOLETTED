@@ -10,3 +10,7 @@
 ## Test ELP stereo camera with Python
 
 ## Calibration
+
+- Take a look: 
+  - http://wiki.ros.org/elp_stereo_camera 
+  - https://www.youtube.com/watch?v=x6YIwoQBBxA 
