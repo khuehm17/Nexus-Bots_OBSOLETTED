@@ -8,6 +8,8 @@
   - https://wiki.dfrobot.com/Gravity%3A%20BMX160%2BBMP388%2010%20DOF%20Sensor%20SKU%3A%20SEN0252
   - https://github.com/DFRobot/DFRobot_BMX160
   - https://github.com/DFRobot/DFRobot_BMP388
+## 3 omni wheel odometry
+- https://github.com/GuiRitter/OpenBase
 
 ## Localization Algorithm
 - Useful resources
@@ -16,3 +18,4 @@
   - https://automaticaddison.com/sensor-fusion-using-the-ros-robot-pose-ekf-package/
   - https://github.com/cra-ros-pkg/robot_localization
   - https://github.com/chiprobotics/chip_imu_driver
+  - https://kapernikov.com/the-ros-robot_localization-package/
