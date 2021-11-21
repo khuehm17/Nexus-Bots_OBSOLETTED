@@ -1,5 +1,3 @@
-###TEST
-##test 02
 import cv2
 
 F_WIDTH = 1280
