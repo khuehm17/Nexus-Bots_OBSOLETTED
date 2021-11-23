@@ -1,5 +1,7 @@
 # Nexus robotics base
 
-- documents:
-- lib: nexus arduino libraries
-- program: testing code
+## Directories description
+- documents/: technical configuration, manual,...
+- lib/: Nexus Arduino libraries
+- program/: testing code
+- resources/: images for notes
