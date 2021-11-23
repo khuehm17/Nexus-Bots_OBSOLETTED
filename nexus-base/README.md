@@ -5,3 +5,5 @@
 - lib/: Nexus Arduino libraries
 - program/: testing code
 - resources/: images for notes
+
+## Nexus Robot configuration
