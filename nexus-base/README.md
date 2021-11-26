@@ -1,8 +1,9 @@
 # Nexus robotics base
 
-- documents:
-- lib: nexus arduino libraries
-- program: testing code
+- documents/: technical configuration, manual,...
+- lib/: Nexus Arduino libraries
+- program/: testing code
+- resources/: images for notes
 
 ## Nexus hardware configuration
 ### Motor wheels pin configuration
