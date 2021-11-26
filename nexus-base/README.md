@@ -6,6 +6,9 @@
 - resources/: images for notes
 
 ## Nexus hardware configuration
+### Hardware inf
+- Board: Arduino Nano
+    - Processor: ATmega328P (Old Bootloader)
 ### Motor wheels pin configuration
 - Motor wheel 1:
     - M1_PWM: 3*
