@@ -12,6 +12,7 @@ On-going Components list:
 - https://youtube.com/playlist?list=PL2PmRem6srUn6jc7Q6ahjL8x2qJg150mZ
 - https://yoraish.com/2021/09/08/a-full-autonomous-stack-a-tutorial-ros-raspberry-pi-arduino-slam/
 - https://github.com/joneivind/Self-Driving-Truck
+- https://github.com/thanhphong98/PIFBot
 
 ## TODO:
 - test Nexus base (add code to https://github.com/khuemh/Nexus-Bots/tree/main/nexus-base/program)
