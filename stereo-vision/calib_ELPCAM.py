@@ -45,6 +45,7 @@ def calibrate(dirpath, prefix, image_format, square_size, width=9, height=6):
     ret, mtx, dist, rvecs, tvecs = cv2.calibrateCamera(objpoints, imgpoints, gray.shape[::-1], None, None)
 
     return [ret, mtx, dist, rvecs, tvecs]
+    
 def save_coefficients(mtx, dist, path):
     """ Save the camera matrix and the distortion coefficients to given path/file. """
     cv_file = cv2.FileStorage(path, cv2.FILE_STORAGE_WRITE)
@@ -52,6 +53,7 @@ def save_coefficients(mtx, dist, path):
     cv_file.write("D", dist)
     # note you *release* you don't close() a FileStorage object
     cv_file.release()
+
 def load_coefficients(path):
     """ Loads camera matrix and distortion coefficients. """
     # FILE_STORAGE_READ
