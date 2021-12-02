@@ -1,9 +1,17 @@
-##Take a look: https://aliyasineser.medium.com/opencv-camera-calibration-e9a48bdd1844
+# https://github.com/aliyasineser/stereoDepth/blob/master/single_camera_calibration.py
 
+# Usage: python3 single_camera_calibration.py   --image_dir \data\leftFixedStereo \
+#                                               --image_format png --prefix left \      
+#                                               --square_size 0.025 \
+#                                               --width 9 --height 6 \
+#                                               --save_file left_cam.yml
+
+import os
 import numpy as np
 import cv2
 import glob
 import argparse
+from calibration_store import save_coefficients
 
 # termination criteria
 criteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 30, 0.001)
@@ -14,17 +22,21 @@ def calibrate(dirpath, prefix, image_format, square_size, width=9, height=6):
     objp = np.zeros((height*width, 3), np.float32)
     objp[:, :2] = np.mgrid[0:width, 0:height].T.reshape(-1, 2)
 
-    objp = objp * square_size
+    objp = objp * square_size  # Create real world coords. Use your metric.
 
     # Arrays to store object points and image points from all the images.
     objpoints = []  # 3d point in real world space
     imgpoints = []  # 2d points in image plane.
 
+    # Directory path correction. Remove the last character if it is '/'
     if dirpath[-1:] == '/':
         dirpath = dirpath[:-1]
 
-    images = glob.glob(dirpath+'/' + prefix + '*.' + image_format)
+    # Get the images
+    images = glob.glob(dirpath + '/' + prefix + '*.' + image_format)
 
+    # Iterate through the pairs and find chessboard corners. Add them to arrays
+    # If openCV can't find the corners in an image, we discard the image.
     for fname in images:
         img = cv2.imread(fname)
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -40,44 +52,35 @@ def calibrate(dirpath, prefix, image_format, square_size, width=9, height=6):
             imgpoints.append(corners2)
 
             # Draw and display the corners
+            # Show the image to see if pattern is found ! imshow function.
             img = cv2.drawChessboardCorners(img, (width, height), corners2, ret)
 
     ret, mtx, dist, rvecs, tvecs = cv2.calibrateCamera(objpoints, imgpoints, gray.shape[::-1], None, None)
 
     return [ret, mtx, dist, rvecs, tvecs]
-    
-def save_coefficients(mtx, dist, path):
-    """ Save the camera matrix and the distortion coefficients to given path/file. """
-    cv_file = cv2.FileStorage(path, cv2.FILE_STORAGE_WRITE)
-    cv_file.write("K", mtx)
-    cv_file.write("D", dist)
-    # note you *release* you don't close() a FileStorage object
-    cv_file.release()
 
-def load_coefficients(path):
-    """ Loads camera matrix and distortion coefficients. """
-    # FILE_STORAGE_READ
-    cv_file = cv2.FileStorage(path, cv2.FILE_STORAGE_READ)
-
-    # note we also have to specify the type to retrieve other wise we only get a
-    # FileNode object back instead of a matrix
-    camera_matrix = cv_file.getNode("K").mat()
-    dist_matrix = cv_file.getNode("D").mat()
-
-    cv_file.release()
-    return [camera_matrix, dist_matrix]
 
 if __name__ == '__main__':
+    # define default value for parser
+    df_image_dir = './data/calib_img/'
+    df_image_format = 'jpg'
+    df_square_size = 0.025
+    df_width = 9
+    df_height = 6
+
+    # Check the help parameters to understand arguments
     parser = argparse.ArgumentParser(description='Camera calibration')
-    parser.add_argument('--image_dir', type=str, required=True, help='image directory path')
-    parser.add_argument('--image_format', type=str, required=True,  help='image format, png/jpg')
+    parser.add_argument('--image_dir', type=str, required=False, default=df_image_dir, help='image directory path')
+    parser.add_argument('--image_format', type=str, required=False, default=df_image_format, help='image format, png/jpg')
     parser.add_argument('--prefix', type=str, required=True, help='image prefix')
-    parser.add_argument('--square_size', type=float, required=False, help='chessboard square size')
-    parser.add_argument('--width', type=int, required=False, help='chessboard width size, default is 9')
-    parser.add_argument('--height', type=int, required=False, help='chessboard height size, default is 6')
+    parser.add_argument('--square_size', type=float, required=False, default=df_square_size, help='chessboard square size')
+    parser.add_argument('--width', type=int, required=False, default=df_width, help='chessboard width size, default is 9')
+    parser.add_argument('--height', type=int, required=False, default=df_height, help='chessboard height size, default is 6')
     parser.add_argument('--save_file', type=str, required=True, help='YML file to save calibration matrices')
 
     args = parser.parse_args()
+
+    # Call the calibraton and save as file. RMS is the error rate, it is better if rms is less than 0.2
     ret, mtx, dist, rvecs, tvecs = calibrate(args.image_dir, args.prefix, args.image_format, args.square_size, args.width, args.height)
     save_coefficients(mtx, dist, args.save_file)
     print("Calibration is finished. RMS: ", ret)

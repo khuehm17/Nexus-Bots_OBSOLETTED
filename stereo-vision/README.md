@@ -10,7 +10,26 @@
   - https://aliyasineser.medium.com/opencv-camera-calibration-e9a48bdd1844
   - https://github.com/aliyasineser/stereoDepth
 
-## Test ELP stereo camera with Python
+## Test ELP stereo camera
+- Connect the camera to the PC
+- Run test_ELPCAM.py to check if the camera worked or not
+
+## Stereo camera calibration procedure
+- Step 1: Get images for calibration
+  - Run get_calib_img.py to get the camera calibration data
+- Step 2: Single camera calibration
+  - Calibrate left camera:
+    ```
+    $ python3 single_calib.py --prefix left_cam_ --save_file data/left.yml
+    ```
+  - Calibrate right camera:
+    ```
+    $ python3 single_calib.py --prefix right_cam_ --save_file data/right.yml
+    ```
+- Step 3: Stereo camera calibration
+  ```
+  $ python3 stereo_calib.py
+  ```
 
 ## Calibration
 
@@ -18,4 +37,4 @@
   - http://wiki.ros.org/elp_stereo_camera 
   - https://www.youtube.com/watch?v=x6YIwoQBBxA 
     " - prefix: Images should have the same name. This prefix represents that name. (If the list is: image1.jpg, image2.jpg … it shows that the prefix is “image”. Code is generalized but we need a prefix to iterate, otherwise, there can be any other file that we don’t care about.) "
-- Cpp Code: https://learnopencv.com/camera-calibration-using-opencv/
+- C++ Code: https://learnopencv.com/camera-calibration-using-opencv/
