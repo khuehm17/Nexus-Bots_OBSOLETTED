@@ -9,19 +9,12 @@
 ### Hardware information
 - Board: Arduino Nano
 - Processor: ATmega328P (Old Bootloader)
+
 ### Motor wheels pin configuration
-- Motor wheel 1:
-    - M1_PWM:   5
-    - M1_DIR:   4
-    - M1_ENCA:  2
-    - M1_ENCB:  3
-- Motor wheel 2:
-    - M2_PWM:   6
-    - M2_DIR:   7
-    - M2_ENCA:  8
-    - M2_ENCB:  9
-- Motor wheel 3:
-    - M3_PWM:   10
-    - M3_DIR:   11
-    - M3_ENCA:  12
-    - M3_ENCB:  13
+|      | Motor Wheel 1 | Motor Wheel 2 | Motor Wheel 3 |
+|------|---------------|---------------|---------------|
+| PWM  |       5       |       6       |       10      |
+| DIR  |       4       |       7       |       11      |
+| ENCA |       2       |       8       |       12      |
+| ENCB |       3       |       9       |       13      |
+
