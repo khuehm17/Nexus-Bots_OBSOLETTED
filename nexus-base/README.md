@@ -6,7 +6,7 @@
 - resources/: images for notes
 
 ## Nexus hardware configuration
-### Hardware information
+### Board information
 - Board: Arduino Nano
 - Processor: ATmega328P (Old Bootloader)
 
