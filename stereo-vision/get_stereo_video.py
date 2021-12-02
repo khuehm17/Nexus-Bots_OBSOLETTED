@@ -19,6 +19,8 @@ stereo.set(cv2.CAP_PROP_FPS, F_FPS)
 stereo.set(cv2.CAP_PROP_FRAME_WIDTH, F_WIDTH)
 stereo.set(cv2.CAP_PROP_FRAME_HEIGHT, F_HEIGHT)
 
+print("record started...")
+
 while(True):
     stereo.grab()
     _, orginal = stereo.retrieve(flag = 0)

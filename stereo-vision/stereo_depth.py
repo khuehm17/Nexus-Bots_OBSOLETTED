@@ -1,8 +1,8 @@
 # https://github.com/aliyasineser/stereoDepth/blob/master/stereo_depth.py
-# python3 stereo_depth.py   --calibration_file data\stereo_cam.yml \
+# python3 stereo_depth.py   --calib_param data\stereo_cam.yml \
 #                           --left_source data\left_1541067450.avi \
 #                           --right_source data\right_1541067450.avi \
-#                           --is_real_time 0
+#                           --real_time 0
 
 import numpy as np
 import cv2
@@ -13,7 +13,8 @@ from calibration_store import load_stereo_coefficients
 def depth_map(imgL, imgR):
     """ Depth map calculation. Works with SGBM and WLS. Need rectified images, returns depth map ( left to right disparity ) """
     # SGBM Parameters -----------------
-    window_size = 3  # wsize default 3; 5; 7 for SGBM reduced size image; 15 for SGBM full size image (1300px and above); 5 Works nicely
+    # wsize default 3; 5; 7 for SGBM reduced size image; 15 for SGBM full size image (1300px and above); 5 Works nicely
+    window_size = 3
 
     left_matcher = cv2.StereoSGBM_create(
         minDisparity=-1,
@@ -35,7 +36,8 @@ def depth_map(imgL, imgR):
     sigma = 1.3
     visual_multiplier = 6
 
-    wls_filter = cv2.ximgproc.createDisparityWLSFilter(matcher_left=left_matcher)
+    wls_filter = cv2.ximgproc.createDisparityWLSFilter(
+        matcher_left=left_matcher)
     wls_filter.setLambda(lmbda)
 
     wls_filter.setSigmaColor(sigma)
@@ -43,35 +45,46 @@ def depth_map(imgL, imgR):
     dispr = right_matcher.compute(imgR, imgL)  # .astype(np.float32)/16
     displ = np.int16(displ)
     dispr = np.int16(dispr)
-    filteredImg = wls_filter.filter(displ, imgL, None, dispr)  # important to put "imgL" here!!!
+    # important to put "imgL" here!!!
+    filteredImg = wls_filter.filter(displ, imgL, None, dispr)
 
-    filteredImg = cv2.normalize(src=filteredImg, dst=filteredImg, beta=0, alpha=255, norm_type=cv2.NORM_MINMAX);
+    filteredImg = cv2.normalize(
+        src=filteredImg, dst=filteredImg, beta=0, alpha=255, norm_type=cv2.NORM_MINMAX)
     filteredImg = np.uint8(filteredImg)
 
     return filteredImg
 
 
 if __name__ == '__main__':
-    # Args handling -> check help parameters to understand
+    df_calib_param = './data/stereo.yml'
+    df_left_source = './data/stereo_left.avi'
+    df_right_source = 'data/stereo_right.avi'
+    df_real_time = 1
     parser = argparse.ArgumentParser(description='Camera calibration')
-    parser.add_argument('--calibration_file', type=str, required=True, help='Path to the stereo calibration file')
-    parser.add_argument('--left_source', type=str, required=True, help='Left video or v4l2 device name')
-    parser.add_argument('--right_source', type=str, required=True, help='Right video or v4l2 device name')
-    parser.add_argument('--is_real_time', type=int, required=True, help='Is it camera stream or video')
+    parser.add_argument('--calib_param', type=str, required=False,
+                        default=df_calib_param, help='Path to the stereo calibration file')
+    parser.add_argument('--left_source', type=str, required=False,
+                        default=df_left_source, help='Left video or v4l2 device name')
+    parser.add_argument('--right_source', type=str, required=False,
+                        default=df_right_source, help='Right video or v4l2 device name')
+    parser.add_argument('--real_time', type=int, required=False,
+                        help='Is it camera stream or video')
 
     args = parser.parse_args()
 
     # is camera stream or video
-    if args.is_real_time:
+    if args.real_time:
         cap_left = cv2.VideoCapture(args.left_source, cv2.CAP_V4L2)
         cap_right = cv2.VideoCapture(args.right_source, cv2.CAP_V4L2)
     else:
         cap_left = cv2.VideoCapture(args.left_source)
         cap_right = cv2.VideoCapture(args.right_source)
 
-    K1, D1, K2, D2, R, T, E, F, R1, R2, P1, P2, Q = load_stereo_coefficients(args.calibration_file)  # Get cams params
+    K1, D1, K2, D2, R, T, E, F, R1, R2, P1, P2, Q = load_stereo_coefficients(
+        args.calib_param)  # Get cams params
 
-    if not cap_left.isOpened() and not cap_right.isOpened():  # If we can't get images from both sources, error
+    # If we can't get images from both sources, error
+    if not cap_left.isOpened() and not cap_right.isOpened():
         print("Can't opened the streams!")
         sys.exit(-9)
 
@@ -93,16 +106,21 @@ if __name__ == '__main__':
         height, width, channel = leftFrame.shape  # We will use the shape for remap
 
         # Undistortion and Rectification part!
-        leftMapX, leftMapY = cv2.initUndistortRectifyMap(K1, D1, R1, P1, (width, height), cv2.CV_32FC1)
-        left_rectified = cv2.remap(leftFrame, leftMapX, leftMapY, cv2.INTER_LINEAR, cv2.BORDER_CONSTANT)
-        rightMapX, rightMapY = cv2.initUndistortRectifyMap(K2, D2, R2, P2, (width, height), cv2.CV_32FC1)
-        right_rectified = cv2.remap(rightFrame, rightMapX, rightMapY, cv2.INTER_LINEAR, cv2.BORDER_CONSTANT)
+        leftMapX, leftMapY = cv2.initUndistortRectifyMap(
+            K1, D1, R1, P1, (width, height), cv2.CV_32FC1)
+        left_rectified = cv2.remap(
+            leftFrame, leftMapX, leftMapY, cv2.INTER_LINEAR, cv2.BORDER_CONSTANT)
+        rightMapX, rightMapY = cv2.initUndistortRectifyMap(
+            K2, D2, R2, P2, (width, height), cv2.CV_32FC1)
+        right_rectified = cv2.remap(
+            rightFrame, rightMapX, rightMapY, cv2.INTER_LINEAR, cv2.BORDER_CONSTANT)
 
         # We need grayscale for disparity map.
         gray_left = cv2.cvtColor(left_rectified, cv2.COLOR_BGR2GRAY)
         gray_right = cv2.cvtColor(right_rectified, cv2.COLOR_BGR2GRAY)
 
-        disparity_image = depth_map(gray_left, gray_right)  # Get the disparity map
+        disparity_image = depth_map(
+            gray_left, gray_right)  # Get the disparity map
 
         # Show the images
         cv2.imshow('left(R)', leftFrame)
