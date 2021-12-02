@@ -3,6 +3,37 @@
 #include <MotorWheel.h>
 #include "main.h"
 
+#define DRIVE_TEST
+
+/***************************************************************************
+ * RS485_TEST
+ **************************************************************************/
+#ifdef RS485_TEST
+
+#define MASTER_EN   13   // connected to RS485 Enable pin
+
+void setup() {
+  pinMode(MASTER_EN , OUTPUT);      // Declare Enable pin as output
+  Serial.begin(19200);               // set serial communication baudrate 
+  digitalWrite(MASTER_EN , LOW);    // Make Enable pin low
+                                    // Receiving mode ON 
+}
+
+void loop() {
+  digitalWrite(MASTER_EN , HIGH);     // Make Enable pin high to send Data
+  delay(5);                           // required minimum delay of 5ms
+  Serial.println("Hello");                // Send character A serially
+  Serial.flush();                     // wait for transmission of data
+  delay(1000);
+  digitalWrite(MASTER_EN, LOW);      // Receiving mode ON
+}
+
+#endif // RS485_TEST
+
+/***************************************************************************
+ * DRIVE_TEST
+ **************************************************************************/
+#ifdef DRIVE_TEST
 void setup()
 {
   TCCR1B = TCCR1B & (0xf8 | 0x01); // Pin9,Pin10 PWM 31250Hz, Silent PWM
@@ -21,7 +52,7 @@ void loop()
   wheel2.PIDRegulate();                  // regulate the PID
   wheel3.setSpeedMMPS(300, DIR_ADVANCE); // Set the pwm speed 100 direction
   wheel3.PIDRegulate();                  // regulate the PID
-  if (millis() % 500 == 0)
+  if (millis() % 5 == 0)
   {
     //    Serial.print("speedRPM1>");
     //    Serial.println(wheel1.getSpeedRPM(),DEC);//display the speed of the MotorWheel
@@ -45,3 +76,5 @@ void loop()
     // wheel1.debugger();
   }
 }
+
+#endif // DRIVE_TEST
