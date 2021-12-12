@@ -3,7 +3,7 @@
 #include <MotorWheel.h>
 #include "main.h"
 
-#define DRIVE_TEST
+#define RS485_TEST
 
 /***************************************************************************
  * RS485_TEST
@@ -26,6 +26,11 @@ void loop() {
   Serial.flush();                     // wait for transmission of data
   delay(1000);
   digitalWrite(MASTER_EN, LOW);      // Receiving mode ON
+  delay(1000);
+  // digitalWrite(MASTER_EN , HIGH);
+  // delay(1000);
+  // digitalWrite(MASTER_EN, LOW);
+  // delay(1000);
 }
 
 #endif // RS485_TEST

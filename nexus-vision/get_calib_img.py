@@ -1,6 +1,6 @@
 import cv2
 
-F_WIDTH = 1280
+F_WIDTH = 640 * 2
 F_HEIGHT = 480
 F_FPS = 30
 
@@ -40,4 +40,5 @@ while(True):
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
 
+stereo.release()
 cv2.destroyAllWindows()
