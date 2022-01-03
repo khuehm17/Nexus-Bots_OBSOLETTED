@@ -3,7 +3,37 @@
 #include <MotorWheel.h>
 #include "main.h"
 
-#define RS485_TEST
+#define ROSSER_TEST
+
+/***************************************************************************
+ * ROSSER_TEST
+ **************************************************************************/
+#ifdef ROSSER_TEST
+#include <ros.h>
+#include <std_msgs/String.h>
+
+ros::NodeHandle hNode;
+
+std_msgs::String strMessage;
+ros::Publisher chatter("Chatter", &strMessage);
+
+char msgHello[13] = "hello world";
+
+void setup()
+{
+  hNode.initNode();
+  hNode.advertise(chatter);
+}
+
+void loop()
+{
+  strMessage.data = msgHello;
+  chatter.publish(&strMessage);
+  hNode.spinOnce();
+  delay(500);
+}
+
+#endif // ROSSER_TEST
 
 /***************************************************************************
  * RS485_TEST
