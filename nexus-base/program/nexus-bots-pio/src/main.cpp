@@ -14,10 +14,11 @@
 
 ros::NodeHandle hNode;
 
-std_msgs::String strMessage;
-ros::Publisher chatter("Chatter", &strMessage);
+std_msgs::String str_msg;
+ros::Publisher chatter("chatter", &str_msg);
 
-char msgHello[13] = "hello world";
+char msgBuffer[64] = {};
+int msgCounter = 0;
 
 void setup()
 {
@@ -27,10 +28,17 @@ void setup()
 
 void loop()
 {
-  strMessage.data = msgHello;
-  chatter.publish(&strMessage);
+  sprintf(msgBuffer, "Hello from Arduino controller board to ROS, counter %d", msgCounter);
+  str_msg.data = msgBuffer;
+  chatter.publish(&str_msg);
   hNode.spinOnce();
-  delay(500);
+  delay(100);
+  msgCounter += 1;
+  if (msgCounter == 100)
+  {
+    msgCounter = 0;
+  }
+  
 }
 
 #endif // ROSSER_TEST
