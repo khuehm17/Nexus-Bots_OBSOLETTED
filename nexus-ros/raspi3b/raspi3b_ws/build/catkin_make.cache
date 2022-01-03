@@ -1,0 +1,2 @@
+test_pkg
+-DCATKIN_DEVEL_PREFIX=/home/ubuntu/works/Nexus-Bots/nexus-ros/raspi3b/raspi3b_ws/devel -DCMAKE_INSTALL_PREFIX=/home/ubuntu/works/Nexus-Bots/nexus-ros/raspi3b/raspi3b_ws/install -G Unix Makefiles
