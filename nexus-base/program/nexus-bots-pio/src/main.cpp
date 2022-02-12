@@ -3,7 +3,45 @@
 #include <MotorWheel.h>
 #include "main.h"
 
-#define RS485_TEST
+#define ROSSER_TEST
+
+/***************************************************************************
+ * ROSSER_TEST
+ **************************************************************************/
+#ifdef ROSSER_TEST
+#include <ros.h>
+#include <std_msgs/String.h>
+
+ros::NodeHandle hNode;
+
+std_msgs::String str_msg;
+ros::Publisher chatter("chatter", &str_msg);
+
+char msgBuffer[64] = {};
+int msgCounter = 0;
+
+void setup()
+{
+  hNode.initNode();
+  hNode.advertise(chatter);
+}
+
+void loop()
+{
+  sprintf(msgBuffer, "Hello from Arduino controller board to ROS, counter %d", msgCounter);
+  str_msg.data = msgBuffer;
+  chatter.publish(&str_msg);
+  hNode.spinOnce();
+  delay(100);
+  msgCounter += 1;
+  if (msgCounter == 100)
+  {
+    msgCounter = 0;
+  }
+  
+}
+
+#endif // ROSSER_TEST
 
 /***************************************************************************
  * RS485_TEST
