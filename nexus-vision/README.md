@@ -33,3 +33,8 @@
   ```
   $ python3 stereo_calib.py
   ```
+## ERROR: module 'cv2.cv2' has no attribute 'ximgproc'
+- Fix:
+  ```
+  $ pip install --force-reinstall opencv-contrib-python==4.1.2.30
+  ```
