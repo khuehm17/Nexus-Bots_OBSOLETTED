@@ -11,6 +11,7 @@
   - https://github.com/aliyasineser/stereoDepth
   - http://wiki.ros.org/elp_stereo_camera 
   - https://www.youtube.com/watch?v=x6YIwoQBBxA 
+  - https://www.youtube.com/watch?v=GpU1Vx-b3VA
 
 ## Test ELP stereo camera
 - Connect the camera to the PC
