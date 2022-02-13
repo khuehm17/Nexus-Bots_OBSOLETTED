@@ -12,7 +12,8 @@
   - http://wiki.ros.org/elp_stereo_camera 
   - https://www.youtube.com/watch?v=x6YIwoQBBxA 
   - https://www.youtube.com/watch?v=GpU1Vx-b3VA
-
+  - https://courses.cs.washington.edu/courses/cse455/09wi/Lects/      
+      (List of ComputerVision lecture)
 ## Test ELP stereo camera
 - Connect the camera to the PC
 - Run test_ELPCAM.py to check if the camera worked or not
