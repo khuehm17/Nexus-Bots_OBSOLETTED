@@ -3,12 +3,51 @@
 #include <MotorWheel.h>
 #include "main.h"
 
-#define ROSSER_TEST
+#define ROSSER_SUB_TEST
 
 /***************************************************************************
- * ROSSER_TEST
+ * ROSSER_SUB_TEST
  **************************************************************************/
-#ifdef ROSSER_TEST
+#ifdef ROSSER_SUB_TEST
+#include <ros.h>
+#include <std_msgs/String.h>
+#include <std_msgs/Empty.h>
+
+ros::NodeHandle hNode;
+
+void messageCallback (const std_msgs::Empty& msgs){
+  // digitalWrite(13, HIGH);
+  wheel1.setSpeedMMPS(500, DIR_ADVANCE - digitalRead(M1_DIR)); // Set the pwm speed 100 direction
+  wheel1.PIDRegulate();                  // regulate the PID
+}
+
+ros::Subscriber<std_msgs::Empty> ledBlink("led_blink", messageCallback);
+
+char msgBuffer[64] = {};
+int msgCounter = 0;
+
+void setup()
+{
+  pinMode(13, OUTPUT);
+  hNode.initNode();
+  hNode.subscribe(ledBlink);
+  TCCR1B = TCCR1B & (0xf8 | 0x01); // Pin9,Pin10 PWM 31250Hz, Silent PWM
+  TCCR2B = TCCR2B & (0xf8 | 0x01);
+  wheel1.PIDEnable(KC, TAUI, TAUD, 10); // used wheel1 to call the PIDEnable
+}
+
+void loop()
+{
+  hNode.spinOnce();
+  delay(1);
+}
+
+#endif // ROSSER_SUB_TEST
+
+/***************************************************************************
+ * ROSSER_PUB_TEST
+ **************************************************************************/
+#ifdef ROSSER_PUB_TEST
 #include <ros.h>
 #include <std_msgs/String.h>
 
@@ -41,7 +80,7 @@ void loop()
   
 }
 
-#endif // ROSSER_TEST
+#endif // ROSSER_PUB_TEST
 
 /***************************************************************************
  * RS485_TEST
