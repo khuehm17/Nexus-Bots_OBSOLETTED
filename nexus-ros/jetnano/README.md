@@ -23,9 +23,9 @@
   ```
   4. Initialize control_hardware node
   ```
-  - cd workspace/Control_hardware_ROS
-  - catkin_make
-  - source devel/setup.bash
+  cd workspace/Control_hardware_ROS
+  catkin_make
+  source devel/setup.bash
   ```
   4. Start hardware_control node
   ```
