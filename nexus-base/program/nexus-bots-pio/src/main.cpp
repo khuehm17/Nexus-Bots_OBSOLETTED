@@ -3,12 +3,223 @@
 #include <MotorWheel.h>
 #include "main.h"
 
-#define ROSSER_TEST
+#define CONTROL_3W_TEST
 
 /***************************************************************************
- * ROSSER_TEST
+ * CONTROL_3W_TEST
  **************************************************************************/
-#ifdef ROSSER_TEST
+#ifdef CONTROL_3W_TEST
+
+#define SPEED_COMMON      (200)
+#define	CMD_STOP          (1)
+#define	CMD_ADVANCE       (2)
+#define	CMD_BACKOFF       (3)
+#define	CMD_LEFT          (4)
+#define	CMD_RIGHT         (5)
+#define	CMD_ROTATELEFT    (6)
+#define	CMD_ROTATERIGHT   (7)
+
+#include <ros.h>
+#include <std_msgs/String.h>
+#include <std_msgs/Empty.h>
+#include <std_msgs/UInt16.h>
+#include <MotorWheel.h>
+#include <Omni3WD.h>
+#include <PID_Beta6.h>
+#include <PinChangeInt.h>
+#include <PinChangeIntConfig.h>
+#include <MatrixMath.h>
+#include <math.h>
+
+#define NR_OMNIWHEELS 3
+
+float speed_kp = 0.35;
+float speed_kd = 0.2;
+float speed_ki = 0.01;
+int sampling_time = SAMPLETIME; //ms
+
+/* wheelBack:   wheel-2
+   wheelRight:  wheel-3
+   wheelLeft:   wheel-1
+*/
+Omni3WD Omni(&wheel2, &wheel3, &wheel1);
+
+ros::NodeHandle hNode;
+
+void cmdrobotCallback( const std_msgs::UInt16& cmd_msg)
+{
+  if (cmd_msg.data == CMD_STOP)
+  {
+    /* Stop */
+    Omni.setCarSlow2Stop(1000);
+    //Omni.setCarStop();
+    Omni.setMotorAllStop();
+    Omni.PIDRegulate();              // regulate the PID
+  } 
+  else if (cmd_msg.data == CMD_ADVANCE)
+  {
+    /* go straight ahead */
+    Omni.setCarAdvance(SPEED_COMMON);
+    Omni.PIDRegulate();
+  }
+  else if (cmd_msg.data == CMD_BACKOFF)
+  {
+    /* Back */
+    Omni.setCarBackoff(SPEED_COMMON);
+    Omni.PIDRegulate();
+  }
+  else if (cmd_msg.data == CMD_LEFT)
+  {
+    /* Turn left */
+    Omni.setCarLeft(SPEED_COMMON);
+    Omni.PIDRegulate();
+  }
+  else if (cmd_msg.data == CMD_RIGHT)
+  {
+    /* Turn Right */
+    Omni.setCarRight(SPEED_COMMON);
+    Omni.PIDRegulate(); 
+  }
+  else if (cmd_msg.data == CMD_ROTATELEFT)
+  {
+    /* ROTATE left */
+    Omni.setCarRotateLeft(SPEED_COMMON);
+    Omni.PIDRegulate();
+  }
+  else if (cmd_msg.data == CMD_ROTATERIGHT)
+  {
+    /* ROTATE right */
+    Omni.setCarRotateRight(SPEED_COMMON);
+    Omni.PIDRegulate();
+  }  
+}
+
+ros::Subscriber<std_msgs::UInt16> sub("cmd_robot_control", cmdrobotCallback);
+
+void setup()
+{
+  hNode.initNode();
+  hNode.subscribe(sub);
+
+  TCCR1B = TCCR1B & (0xf8 | 0x01); // Pin9,Pin10 PWM 31250Hz, Silent PWM
+  TCCR2B = TCCR2B & (0xf8 | 0x01);
+  Omni.PIDEnable(speed_kp, speed_ki, speed_kd, sampling_time);
+}
+
+void loop()
+{
+  hNode.spinOnce();
+  delay(1);
+}
+
+#endif // CONTROL_3W_TEST
+
+/***************************************************************************
+ * CONTROL_TEST
+ **************************************************************************/
+#ifdef CONTROL_TEST
+
+#define CMD_TURNLEFT    1
+#define CMD_TURNRIGHT   2
+#define CMD_STOP        3
+#define SPEED           500
+
+#include <ros.h>
+#include <std_msgs/String.h>
+#include <std_msgs/Empty.h>
+#include <std_msgs/UInt16.h>
+
+ros::NodeHandle hNode;
+
+void servo_cb( const std_msgs::UInt16& cmd_msg)
+{
+  // servo.write(cmd_msg.data); //set servo angle, should be from 0-180  
+  // digitalWrite(13, HIGH-digitalRead(13));  //toggle led  
+  if (cmd_msg.data == CMD_TURNLEFT)
+  {
+    /* turn left */
+    wheel1.setSpeedMMPS(SPEED, DIR_ADVANCE); // Set the pwm speed 100 direction
+    wheel1.PIDRegulate();                  // regulate the PID
+  } 
+  else if (cmd_msg.data == CMD_TURNRIGHT)
+  {
+    /* turn right */
+    wheel1.setSpeedMMPS(SPEED, DIR_BACKOFF); // Set the pwm speed 100 direction
+    wheel1.PIDRegulate();                  // regulate the PID
+  }
+  else if (cmd_msg.data == CMD_STOP)
+  {
+    for (int i = SPEED; i >= 0; i--){
+    wheel1.setSpeedMMPS(0, DIR_ADVANCE); 
+    wheel1.PIDRegulate();                  // regulate the PID
+    }
+  }
+  
+}
+
+ros::Subscriber<std_msgs::UInt16> sub("servo", servo_cb);
+
+void setup(){
+  pinMode(13, OUTPUT);
+
+  hNode.initNode();
+  hNode.subscribe(sub);
+
+  TCCR1B = TCCR1B & (0xf8 | 0x01); // Pin9,Pin10 PWM 31250Hz, Silent PWM
+  TCCR2B = TCCR2B & (0xf8 | 0x01);
+  wheel1.PIDEnable(KC, TAUI, TAUD, 10); // used wheel1 to call the PIDEnable
+}
+
+void loop(){
+  hNode.spinOnce();
+  delay(1);
+}
+
+#endif // CONTROL_TEST
+
+/***************************************************************************
+ * ROSSER_SUB_TEST
+ **************************************************************************/
+#ifdef ROSSER_SUB_TEST
+#include <ros.h>
+#include <std_msgs/String.h>
+#include <std_msgs/Empty.h>
+
+ros::NodeHandle hNode;
+
+void messageCallback (const std_msgs::Empty& msgs){
+  // digitalWrite(13, HIGH);
+  wheel1.setSpeedMMPS(500, DIR_ADVANCE - digitalRead(M1_DIR)); // Set the pwm speed 100 direction
+  wheel1.PIDRegulate();                  // regulate the PID
+}
+
+ros::Subscriber<std_msgs::Empty> ledBlink("led_blink", messageCallback);
+
+char msgBuffer[64] = {};
+int msgCounter = 0;
+
+void setup()
+{
+  pinMode(13, OUTPUT);
+  hNode.initNode();
+  hNode.subscribe(ledBlink);
+  TCCR1B = TCCR1B & (0xf8 | 0x01); // Pin9,Pin10 PWM 31250Hz, Silent PWM
+  TCCR2B = TCCR2B & (0xf8 | 0x01);
+  wheel1.PIDEnable(KC, TAUI, TAUD, 10); // used wheel1 to call the PIDEnable
+}
+
+void loop()
+{
+  hNode.spinOnce();
+  delay(1);
+}
+
+#endif // ROSSER_SUB_TEST
+
+/***************************************************************************
+ * ROSSER_PUB_TEST
+ **************************************************************************/
+#ifdef ROSSER_PUB_TEST
 #include <ros.h>
 #include <std_msgs/String.h>
 
@@ -41,7 +252,7 @@ void loop()
   
 }
 
-#endif // ROSSER_TEST
+#endif // ROSSER_PUB_TEST
 
 /***************************************************************************
  * RS485_TEST
