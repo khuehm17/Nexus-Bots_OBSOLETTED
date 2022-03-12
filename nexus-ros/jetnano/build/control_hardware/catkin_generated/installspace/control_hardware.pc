@@ -1,0 +1,8 @@
+prefix=/home/blackwind/workspace/Control_hardware_ROS/install
+
+Name: control_hardware
+Description: Description of control_hardware
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
