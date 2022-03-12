@@ -2,8 +2,9 @@
 
 ## Environments information
 - OS version: Ubuntu 18.04
-- ROS version: Noetic
+- ROS version: Melodic
+- Board: Jetson Nano J47
 - Prerequisite packages
-  - Rviz version ...
+  - rosserial
 
-## Run guideline
+## Run guideline  
