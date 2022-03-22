@@ -14,3 +14,4 @@ On-going Components list:
 - https://github.com/joneivind/Self-Driving-Truck
 - https://github.com/thanhphong98/PIFBot
 - https://github.com/lukovicaleksa/autonomous-driving-turtlebot-with-reinforcement-learning
+- https://team.inria.fr/rits/computer-vision/drl/
