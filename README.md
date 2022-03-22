@@ -13,3 +13,4 @@ On-going Components list:
 - https://yoraish.com/2021/09/08/a-full-autonomous-stack-a-tutorial-ros-raspberry-pi-arduino-slam/
 - https://github.com/joneivind/Self-Driving-Truck
 - https://github.com/thanhphong98/PIFBot
+- https://github.com/lukovicaleksa/autonomous-driving-turtlebot-with-reinforcement-learning
