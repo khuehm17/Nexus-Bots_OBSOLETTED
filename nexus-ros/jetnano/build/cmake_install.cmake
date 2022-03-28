@@ -1,8 +1,8 @@
-# Install script for directory: /home/blackwind/workspace/Control_hardware_ROS/src
+# Install script for directory: /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/blackwind/workspace/Control_hardware_ROS/install")
+  set(CMAKE_INSTALL_PREFIX "/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -49,90 +49,92 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/blackwind/workspace/Control_hardware_ROS/install/_setup_util.py")
+   "/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/install/_setup_util.py")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/blackwind/workspace/Control_hardware_ROS/install" TYPE PROGRAM FILES "/home/blackwind/workspace/Control_hardware_ROS/build/catkin_generated/installspace/_setup_util.py")
+file(INSTALL DESTINATION "/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/install" TYPE PROGRAM FILES "/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/catkin_generated/installspace/_setup_util.py")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/blackwind/workspace/Control_hardware_ROS/install/env.sh")
+   "/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/install/env.sh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/blackwind/workspace/Control_hardware_ROS/install" TYPE PROGRAM FILES "/home/blackwind/workspace/Control_hardware_ROS/build/catkin_generated/installspace/env.sh")
+file(INSTALL DESTINATION "/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/install" TYPE PROGRAM FILES "/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/catkin_generated/installspace/env.sh")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/blackwind/workspace/Control_hardware_ROS/install/setup.bash;/home/blackwind/workspace/Control_hardware_ROS/install/local_setup.bash")
+   "/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/install/setup.bash;/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/install/local_setup.bash")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/blackwind/workspace/Control_hardware_ROS/install" TYPE FILE FILES
-    "/home/blackwind/workspace/Control_hardware_ROS/build/catkin_generated/installspace/setup.bash"
-    "/home/blackwind/workspace/Control_hardware_ROS/build/catkin_generated/installspace/local_setup.bash"
+file(INSTALL DESTINATION "/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/install" TYPE FILE FILES
+    "/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/catkin_generated/installspace/setup.bash"
+    "/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/catkin_generated/installspace/local_setup.bash"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/blackwind/workspace/Control_hardware_ROS/install/setup.sh;/home/blackwind/workspace/Control_hardware_ROS/install/local_setup.sh")
+   "/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/install/setup.sh;/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/install/local_setup.sh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/blackwind/workspace/Control_hardware_ROS/install" TYPE FILE FILES
-    "/home/blackwind/workspace/Control_hardware_ROS/build/catkin_generated/installspace/setup.sh"
-    "/home/blackwind/workspace/Control_hardware_ROS/build/catkin_generated/installspace/local_setup.sh"
+file(INSTALL DESTINATION "/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/install" TYPE FILE FILES
+    "/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/catkin_generated/installspace/setup.sh"
+    "/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/catkin_generated/installspace/local_setup.sh"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/blackwind/workspace/Control_hardware_ROS/install/setup.zsh;/home/blackwind/workspace/Control_hardware_ROS/install/local_setup.zsh")
+   "/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/install/setup.zsh;/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/install/local_setup.zsh")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/blackwind/workspace/Control_hardware_ROS/install" TYPE FILE FILES
-    "/home/blackwind/workspace/Control_hardware_ROS/build/catkin_generated/installspace/setup.zsh"
-    "/home/blackwind/workspace/Control_hardware_ROS/build/catkin_generated/installspace/local_setup.zsh"
+file(INSTALL DESTINATION "/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/install" TYPE FILE FILES
+    "/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/catkin_generated/installspace/setup.zsh"
+    "/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/catkin_generated/installspace/local_setup.zsh"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   list(APPEND CMAKE_ABSOLUTE_DESTINATION_FILES
-   "/home/blackwind/workspace/Control_hardware_ROS/install/.rosinstall")
+   "/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/install/.rosinstall")
   if(CMAKE_WARN_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(WARNING "ABSOLUTE path INSTALL DESTINATION : ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/home/blackwind/workspace/Control_hardware_ROS/install" TYPE FILE FILES "/home/blackwind/workspace/Control_hardware_ROS/build/catkin_generated/installspace/.rosinstall")
+file(INSTALL DESTINATION "/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/install" TYPE FILE FILES "/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/catkin_generated/installspace/.rosinstall")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/blackwind/workspace/Control_hardware_ROS/build/gtest/cmake_install.cmake")
-  include("/home/blackwind/workspace/Control_hardware_ROS/build/teleop_twist_keyboard/cmake_install.cmake")
-  include("/home/blackwind/workspace/Control_hardware_ROS/build/control_hardware/cmake_install.cmake")
+  include("/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/gtest/cmake_install.cmake")
+  include("/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/teleop_twist_keyboard/cmake_install.cmake")
+  include("/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/control_hardware/cmake_install.cmake")
+  include("/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/imu_bmi160/cmake_install.cmake")
+  include("/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/imu_test/cmake_install.cmake")
 
 endif()
 
@@ -144,5 +146,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/blackwind/workspace/Control_hardware_ROS/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

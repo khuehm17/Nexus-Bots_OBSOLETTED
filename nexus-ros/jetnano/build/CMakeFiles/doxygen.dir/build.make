@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/blackwind/workspace/Control_hardware_ROS/src
+CMAKE_SOURCE_DIR = /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/blackwind/workspace/Control_hardware_ROS/build
+CMAKE_BINARY_DIR = /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build
 
 # Utility rule file for doxygen.
 
@@ -67,6 +67,6 @@ CMakeFiles/doxygen.dir/clean:
 .PHONY : CMakeFiles/doxygen.dir/clean
 
 CMakeFiles/doxygen.dir/depend:
-	cd /home/blackwind/workspace/Control_hardware_ROS/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/blackwind/workspace/Control_hardware_ROS/src /home/blackwind/workspace/Control_hardware_ROS/src /home/blackwind/workspace/Control_hardware_ROS/build /home/blackwind/workspace/Control_hardware_ROS/build /home/blackwind/workspace/Control_hardware_ROS/build/CMakeFiles/doxygen.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/src /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/src /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/CMakeFiles/doxygen.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/doxygen.dir/depend
 

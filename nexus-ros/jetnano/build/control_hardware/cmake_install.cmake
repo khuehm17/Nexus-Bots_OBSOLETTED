@@ -1,8 +1,8 @@
-# Install script for directory: /home/blackwind/workspace/Control_hardware_ROS/src/control_hardware
+# Install script for directory: /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/src/control_hardware
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/blackwind/workspace/Control_hardware_ROS/install")
+  set(CMAKE_INSTALL_PREFIX "/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/blackwind/workspace/Control_hardware_ROS/build/control_hardware/catkin_generated/installspace/control_hardware.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/control_hardware/catkin_generated/installspace/control_hardware.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/control_hardware/cmake" TYPE FILE FILES
-    "/home/blackwind/workspace/Control_hardware_ROS/build/control_hardware/catkin_generated/installspace/control_hardwareConfig.cmake"
-    "/home/blackwind/workspace/Control_hardware_ROS/build/control_hardware/catkin_generated/installspace/control_hardwareConfig-version.cmake"
+    "/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/control_hardware/catkin_generated/installspace/control_hardwareConfig.cmake"
+    "/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/control_hardware/catkin_generated/installspace/control_hardwareConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/control_hardware" TYPE FILE FILES "/home/blackwind/workspace/Control_hardware_ROS/src/control_hardware/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/control_hardware" TYPE FILE FILES "/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/src/control_hardware/package.xml")
 endif()
 

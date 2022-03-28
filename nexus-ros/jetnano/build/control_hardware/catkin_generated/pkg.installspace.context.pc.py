@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "".split(';') if "" != "" else []
 PROJECT_CATKIN_DEPENDS = "".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "control_hardware"
-PROJECT_SPACE_DIR = "/home/blackwind/workspace/Control_hardware_ROS/install"
+PROJECT_SPACE_DIR = "/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/install"
 PROJECT_VERSION = "0.0.0"

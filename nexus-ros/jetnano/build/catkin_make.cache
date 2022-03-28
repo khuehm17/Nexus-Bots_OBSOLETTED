@@ -1,2 +1,2 @@
-control_hardware:teleop_twist_keyboard
--DCATKIN_DEVEL_PREFIX=/home/blackwind/workspace/Control_hardware_ROS/devel -DCMAKE_INSTALL_PREFIX=/home/blackwind/workspace/Control_hardware_ROS/install -G Unix Makefiles
+control_hardware:imu_bmi160:imu_test:teleop_twist_keyboard
+-DCATKIN_DEVEL_PREFIX=/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/devel -DCMAKE_INSTALL_PREFIX=/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/install -G Unix Makefiles

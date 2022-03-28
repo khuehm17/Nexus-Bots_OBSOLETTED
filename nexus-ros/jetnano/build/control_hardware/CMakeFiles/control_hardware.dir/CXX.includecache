@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/blackwind/workspace/Control_hardware_ROS/src/control_hardware/src/control_hardware.cpp
+/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/src/control_hardware/src/control_hardware.cpp
 ros/ros.h
-/home/blackwind/workspace/Control_hardware_ROS/src/control_hardware/src/ros/ros.h
+/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/src/control_hardware/src/ros/ros.h
 std_msgs/String.h
-/home/blackwind/workspace/Control_hardware_ROS/src/control_hardware/src/std_msgs/String.h
+/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/src/control_hardware/src/std_msgs/String.h
 std_msgs/UInt16.h
-/home/blackwind/workspace/Control_hardware_ROS/src/control_hardware/src/std_msgs/UInt16.h
+/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/src/control_hardware/src/std_msgs/UInt16.h
 geometry_msgs/Twist.h
 -
 sstream

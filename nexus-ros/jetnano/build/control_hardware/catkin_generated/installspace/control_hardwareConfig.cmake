@@ -67,14 +67,14 @@ set(control_hardware_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(control_hardware_SOURCE_PREFIX /home/blackwind/workspace/Control_hardware_ROS/src/control_hardware)
-  set(control_hardware_DEVEL_PREFIX /home/blackwind/workspace/Control_hardware_ROS/devel)
+  set(control_hardware_SOURCE_PREFIX /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/src/control_hardware)
+  set(control_hardware_DEVEL_PREFIX /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/devel)
   set(control_hardware_INSTALL_PREFIX "")
   set(control_hardware_PREFIX ${control_hardware_DEVEL_PREFIX})
 else()
   set(control_hardware_SOURCE_PREFIX "")
   set(control_hardware_DEVEL_PREFIX "")
-  set(control_hardware_INSTALL_PREFIX /home/blackwind/workspace/Control_hardware_ROS/install)
+  set(control_hardware_INSTALL_PREFIX /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/install)
   set(control_hardware_PREFIX ${control_hardware_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/blackwind/workspace/Control_hardware_ROS/install/lib;/opt/ros/melodic/lib)
+    foreach(path /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/install/lib;/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)

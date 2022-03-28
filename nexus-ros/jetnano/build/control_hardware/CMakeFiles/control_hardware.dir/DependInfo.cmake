@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/blackwind/workspace/Control_hardware_ROS/src/control_hardware/src/control_hardware.cpp" "/home/blackwind/workspace/Control_hardware_ROS/build/control_hardware/CMakeFiles/control_hardware.dir/src/control_hardware.cpp.o"
+  "/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/src/control_hardware/src/control_hardware.cpp" "/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/control_hardware/CMakeFiles/control_hardware.dir/src/control_hardware.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

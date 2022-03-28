@@ -1,4 +1,4 @@
-prefix=/home/blackwind/workspace/Control_hardware_ROS/install
+prefix=/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/install
 
 Name: teleop_twist_keyboard
 Description: Description of teleop_twist_keyboard

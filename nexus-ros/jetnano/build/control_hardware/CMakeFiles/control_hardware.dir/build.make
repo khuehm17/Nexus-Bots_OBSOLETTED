@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/blackwind/workspace/Control_hardware_ROS/src
+CMAKE_SOURCE_DIR = /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/blackwind/workspace/Control_hardware_ROS/build
+CMAKE_BINARY_DIR = /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build
 
 # Include any dependencies generated for this target.
 include control_hardware/CMakeFiles/control_hardware.dir/depend.make
@@ -58,17 +58,17 @@ include control_hardware/CMakeFiles/control_hardware.dir/progress.make
 include control_hardware/CMakeFiles/control_hardware.dir/flags.make
 
 control_hardware/CMakeFiles/control_hardware.dir/src/control_hardware.cpp.o: control_hardware/CMakeFiles/control_hardware.dir/flags.make
-control_hardware/CMakeFiles/control_hardware.dir/src/control_hardware.cpp.o: /home/blackwind/workspace/Control_hardware_ROS/src/control_hardware/src/control_hardware.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/blackwind/workspace/Control_hardware_ROS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object control_hardware/CMakeFiles/control_hardware.dir/src/control_hardware.cpp.o"
-	cd /home/blackwind/workspace/Control_hardware_ROS/build/control_hardware && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/control_hardware.dir/src/control_hardware.cpp.o -c /home/blackwind/workspace/Control_hardware_ROS/src/control_hardware/src/control_hardware.cpp
+control_hardware/CMakeFiles/control_hardware.dir/src/control_hardware.cpp.o: /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/src/control_hardware/src/control_hardware.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object control_hardware/CMakeFiles/control_hardware.dir/src/control_hardware.cpp.o"
+	cd /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/control_hardware && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/control_hardware.dir/src/control_hardware.cpp.o -c /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/src/control_hardware/src/control_hardware.cpp
 
 control_hardware/CMakeFiles/control_hardware.dir/src/control_hardware.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/control_hardware.dir/src/control_hardware.cpp.i"
-	cd /home/blackwind/workspace/Control_hardware_ROS/build/control_hardware && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/blackwind/workspace/Control_hardware_ROS/src/control_hardware/src/control_hardware.cpp > CMakeFiles/control_hardware.dir/src/control_hardware.cpp.i
+	cd /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/control_hardware && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/src/control_hardware/src/control_hardware.cpp > CMakeFiles/control_hardware.dir/src/control_hardware.cpp.i
 
 control_hardware/CMakeFiles/control_hardware.dir/src/control_hardware.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/control_hardware.dir/src/control_hardware.cpp.s"
-	cd /home/blackwind/workspace/Control_hardware_ROS/build/control_hardware && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/blackwind/workspace/Control_hardware_ROS/src/control_hardware/src/control_hardware.cpp -o CMakeFiles/control_hardware.dir/src/control_hardware.cpp.s
+	cd /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/control_hardware && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/src/control_hardware/src/control_hardware.cpp -o CMakeFiles/control_hardware.dir/src/control_hardware.cpp.s
 
 control_hardware/CMakeFiles/control_hardware.dir/src/control_hardware.cpp.o.requires:
 
@@ -88,32 +88,32 @@ control_hardware_OBJECTS = \
 # External object files for target control_hardware
 control_hardware_EXTERNAL_OBJECTS =
 
-/home/blackwind/workspace/Control_hardware_ROS/devel/lib/control_hardware/control_hardware: control_hardware/CMakeFiles/control_hardware.dir/src/control_hardware.cpp.o
-/home/blackwind/workspace/Control_hardware_ROS/devel/lib/control_hardware/control_hardware: control_hardware/CMakeFiles/control_hardware.dir/build.make
-/home/blackwind/workspace/Control_hardware_ROS/devel/lib/control_hardware/control_hardware: /opt/ros/melodic/lib/libroscpp.so
-/home/blackwind/workspace/Control_hardware_ROS/devel/lib/control_hardware/control_hardware: /usr/lib/aarch64-linux-gnu/libboost_filesystem.so
-/home/blackwind/workspace/Control_hardware_ROS/devel/lib/control_hardware/control_hardware: /opt/ros/melodic/lib/librosconsole.so
-/home/blackwind/workspace/Control_hardware_ROS/devel/lib/control_hardware/control_hardware: /opt/ros/melodic/lib/librosconsole_log4cxx.so
-/home/blackwind/workspace/Control_hardware_ROS/devel/lib/control_hardware/control_hardware: /opt/ros/melodic/lib/librosconsole_backend_interface.so
-/home/blackwind/workspace/Control_hardware_ROS/devel/lib/control_hardware/control_hardware: /usr/lib/aarch64-linux-gnu/liblog4cxx.so
-/home/blackwind/workspace/Control_hardware_ROS/devel/lib/control_hardware/control_hardware: /usr/lib/aarch64-linux-gnu/libboost_regex.so
-/home/blackwind/workspace/Control_hardware_ROS/devel/lib/control_hardware/control_hardware: /opt/ros/melodic/lib/libroscpp_serialization.so
-/home/blackwind/workspace/Control_hardware_ROS/devel/lib/control_hardware/control_hardware: /opt/ros/melodic/lib/libxmlrpcpp.so
-/home/blackwind/workspace/Control_hardware_ROS/devel/lib/control_hardware/control_hardware: /opt/ros/melodic/lib/librostime.so
-/home/blackwind/workspace/Control_hardware_ROS/devel/lib/control_hardware/control_hardware: /opt/ros/melodic/lib/libcpp_common.so
-/home/blackwind/workspace/Control_hardware_ROS/devel/lib/control_hardware/control_hardware: /usr/lib/aarch64-linux-gnu/libboost_system.so
-/home/blackwind/workspace/Control_hardware_ROS/devel/lib/control_hardware/control_hardware: /usr/lib/aarch64-linux-gnu/libboost_thread.so
-/home/blackwind/workspace/Control_hardware_ROS/devel/lib/control_hardware/control_hardware: /usr/lib/aarch64-linux-gnu/libboost_chrono.so
-/home/blackwind/workspace/Control_hardware_ROS/devel/lib/control_hardware/control_hardware: /usr/lib/aarch64-linux-gnu/libboost_date_time.so
-/home/blackwind/workspace/Control_hardware_ROS/devel/lib/control_hardware/control_hardware: /usr/lib/aarch64-linux-gnu/libboost_atomic.so
-/home/blackwind/workspace/Control_hardware_ROS/devel/lib/control_hardware/control_hardware: /usr/lib/aarch64-linux-gnu/libpthread.so
-/home/blackwind/workspace/Control_hardware_ROS/devel/lib/control_hardware/control_hardware: /usr/lib/aarch64-linux-gnu/libconsole_bridge.so.0.4
-/home/blackwind/workspace/Control_hardware_ROS/devel/lib/control_hardware/control_hardware: control_hardware/CMakeFiles/control_hardware.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/blackwind/workspace/Control_hardware_ROS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/blackwind/workspace/Control_hardware_ROS/devel/lib/control_hardware/control_hardware"
-	cd /home/blackwind/workspace/Control_hardware_ROS/build/control_hardware && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/control_hardware.dir/link.txt --verbose=$(VERBOSE)
+/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/devel/lib/control_hardware/control_hardware: control_hardware/CMakeFiles/control_hardware.dir/src/control_hardware.cpp.o
+/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/devel/lib/control_hardware/control_hardware: control_hardware/CMakeFiles/control_hardware.dir/build.make
+/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/devel/lib/control_hardware/control_hardware: /opt/ros/melodic/lib/libroscpp.so
+/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/devel/lib/control_hardware/control_hardware: /usr/lib/aarch64-linux-gnu/libboost_filesystem.so
+/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/devel/lib/control_hardware/control_hardware: /opt/ros/melodic/lib/librosconsole.so
+/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/devel/lib/control_hardware/control_hardware: /opt/ros/melodic/lib/librosconsole_log4cxx.so
+/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/devel/lib/control_hardware/control_hardware: /opt/ros/melodic/lib/librosconsole_backend_interface.so
+/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/devel/lib/control_hardware/control_hardware: /usr/lib/aarch64-linux-gnu/liblog4cxx.so
+/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/devel/lib/control_hardware/control_hardware: /usr/lib/aarch64-linux-gnu/libboost_regex.so
+/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/devel/lib/control_hardware/control_hardware: /opt/ros/melodic/lib/libroscpp_serialization.so
+/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/devel/lib/control_hardware/control_hardware: /opt/ros/melodic/lib/libxmlrpcpp.so
+/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/devel/lib/control_hardware/control_hardware: /opt/ros/melodic/lib/librostime.so
+/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/devel/lib/control_hardware/control_hardware: /opt/ros/melodic/lib/libcpp_common.so
+/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/devel/lib/control_hardware/control_hardware: /usr/lib/aarch64-linux-gnu/libboost_system.so
+/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/devel/lib/control_hardware/control_hardware: /usr/lib/aarch64-linux-gnu/libboost_thread.so
+/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/devel/lib/control_hardware/control_hardware: /usr/lib/aarch64-linux-gnu/libboost_chrono.so
+/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/devel/lib/control_hardware/control_hardware: /usr/lib/aarch64-linux-gnu/libboost_date_time.so
+/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/devel/lib/control_hardware/control_hardware: /usr/lib/aarch64-linux-gnu/libboost_atomic.so
+/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/devel/lib/control_hardware/control_hardware: /usr/lib/aarch64-linux-gnu/libpthread.so
+/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/devel/lib/control_hardware/control_hardware: /usr/lib/aarch64-linux-gnu/libconsole_bridge.so.0.4
+/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/devel/lib/control_hardware/control_hardware: control_hardware/CMakeFiles/control_hardware.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/devel/lib/control_hardware/control_hardware"
+	cd /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/control_hardware && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/control_hardware.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-control_hardware/CMakeFiles/control_hardware.dir/build: /home/blackwind/workspace/Control_hardware_ROS/devel/lib/control_hardware/control_hardware
+control_hardware/CMakeFiles/control_hardware.dir/build: /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/devel/lib/control_hardware/control_hardware
 
 .PHONY : control_hardware/CMakeFiles/control_hardware.dir/build
 
@@ -122,10 +122,10 @@ control_hardware/CMakeFiles/control_hardware.dir/requires: control_hardware/CMak
 .PHONY : control_hardware/CMakeFiles/control_hardware.dir/requires
 
 control_hardware/CMakeFiles/control_hardware.dir/clean:
-	cd /home/blackwind/workspace/Control_hardware_ROS/build/control_hardware && $(CMAKE_COMMAND) -P CMakeFiles/control_hardware.dir/cmake_clean.cmake
+	cd /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/control_hardware && $(CMAKE_COMMAND) -P CMakeFiles/control_hardware.dir/cmake_clean.cmake
 .PHONY : control_hardware/CMakeFiles/control_hardware.dir/clean
 
 control_hardware/CMakeFiles/control_hardware.dir/depend:
-	cd /home/blackwind/workspace/Control_hardware_ROS/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/blackwind/workspace/Control_hardware_ROS/src /home/blackwind/workspace/Control_hardware_ROS/src/control_hardware /home/blackwind/workspace/Control_hardware_ROS/build /home/blackwind/workspace/Control_hardware_ROS/build/control_hardware /home/blackwind/workspace/Control_hardware_ROS/build/control_hardware/CMakeFiles/control_hardware.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/src /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/src/control_hardware /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/control_hardware /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/control_hardware/CMakeFiles/control_hardware.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : control_hardware/CMakeFiles/control_hardware.dir/depend
 

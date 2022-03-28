@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/blackwind/workspace/Control_hardware_ROS/src
+CMAKE_SOURCE_DIR = /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/blackwind/workspace/Control_hardware_ROS/build
+CMAKE_BINARY_DIR = /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build
 
 # Utility rule file for roscpp_generate_messages_cpp.
 
@@ -63,10 +63,10 @@ control_hardware/CMakeFiles/roscpp_generate_messages_cpp.dir/build: roscpp_gener
 .PHONY : control_hardware/CMakeFiles/roscpp_generate_messages_cpp.dir/build
 
 control_hardware/CMakeFiles/roscpp_generate_messages_cpp.dir/clean:
-	cd /home/blackwind/workspace/Control_hardware_ROS/build/control_hardware && $(CMAKE_COMMAND) -P CMakeFiles/roscpp_generate_messages_cpp.dir/cmake_clean.cmake
+	cd /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/control_hardware && $(CMAKE_COMMAND) -P CMakeFiles/roscpp_generate_messages_cpp.dir/cmake_clean.cmake
 .PHONY : control_hardware/CMakeFiles/roscpp_generate_messages_cpp.dir/clean
 
 control_hardware/CMakeFiles/roscpp_generate_messages_cpp.dir/depend:
-	cd /home/blackwind/workspace/Control_hardware_ROS/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/blackwind/workspace/Control_hardware_ROS/src /home/blackwind/workspace/Control_hardware_ROS/src/control_hardware /home/blackwind/workspace/Control_hardware_ROS/build /home/blackwind/workspace/Control_hardware_ROS/build/control_hardware /home/blackwind/workspace/Control_hardware_ROS/build/control_hardware/CMakeFiles/roscpp_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/src /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/src/control_hardware /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/control_hardware /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/control_hardware/CMakeFiles/roscpp_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : control_hardware/CMakeFiles/roscpp_generate_messages_cpp.dir/depend
 
