@@ -149,6 +149,9 @@ struct ISRVars
 	unsigned char pinIRQ; // pinIRQA 201207
 };
 
+/**
+ * Implementation of Nexus motor control class with PID algorithm 
+ */
 class Motor : public PID
 {
 public:
@@ -238,6 +241,9 @@ private:
 #ifndef REDUCTION_RATIO
 #define REDUCTION_RATIO 64
 #endif
+/**
+ * Implementation of Nexus geared motor control class with PID algorithm 
+ */
 class GearedMotor : public Motor
 { // RPM
 public:
@@ -262,6 +268,9 @@ private:
 #endif
 
 #define CIRMM 314 // mm
+/**
+ * Implementation of Nexus motor wheel control class with PID algorithm 
+ */
 class MotorWheel : public GearedMotor
 { //
 public:
