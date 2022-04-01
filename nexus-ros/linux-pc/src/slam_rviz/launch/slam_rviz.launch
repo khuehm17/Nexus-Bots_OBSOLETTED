@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find slam_rviz)/rviz_cfg/slam_mapping.rviz"/>
+</launch>

@@ -34,6 +34,6 @@ On Linux-PC:
     ```
     Then, source bash configuration file using command ```$ source ~/.bashrc```
 
-3. using command ```$ export ROS_MASTER_URI=http://<Jetson_IP>:<Port_IP>``` on terminal Linux-PC
-
-4. On another terminal, remote to Jetson by using command ```$ ssh <Jetson_hostname>@<Jetson_IP>```
+### Test ROS_IP
+1. On Jetson: running ```$ roscore```
+2. On Linux-PC: using command ```$ rostopic list``` and display ```/rosout /rosout_agg```. 

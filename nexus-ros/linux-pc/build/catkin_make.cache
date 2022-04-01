@@ -1,0 +1,2 @@
+slam_rviz
+-DCATKIN_DEVEL_PREFIX=/home/hao/Nexus-Bots/nexus-ros/linux-pc/devel -DCMAKE_INSTALL_PREFIX=/home/hao/Nexus-Bots/nexus-ros/linux-pc/install -G Unix Makefiles
