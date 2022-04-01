@@ -37,3 +37,6 @@ On Linux-PC:
 ### Test ROS_IP
 1. On Jetson: running ```$ roscore```
 2. On Linux-PC: using command ```$ rostopic list``` and display ```/rosout /rosout_agg```. 
+## Running Slam mapping.
+1. On Jetson: Everytime enter workspace, must using command ```$ cd Nexus-Bots/nexus-ros/jetnano```, ```$ catkin_make && source devel/setup.bash```. And then ```roslaunch hector_slam_launch tutorial.launch```.
+2. On Linux-PC: Using command ```$ cd Nexus-Bots/nexus-ros/linux-pc```, ```$ catkin_make && source devel/setup.bash```. The next, ```$ roslaunch slam_rviz slam_rviz.launch```
