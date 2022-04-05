@@ -49,7 +49,7 @@ void cmdvelCallback(const geometry_msgs::Twist::ConstPtr& keyboard_control)
 
 int main(int argc, char** argv)
 {
-	ros::init(argc, argv, "control_hardware");
+    ros::init(argc, argv, "control_hardware");
 
     ros::NodeHandle hNode;
     
