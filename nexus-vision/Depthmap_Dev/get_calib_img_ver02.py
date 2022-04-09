@@ -4,6 +4,10 @@
 #30.03.2022
 # Process: Script for auto capture image after 10sec(Finished)
 
+"""
+This script used for auto capture image after 10sec. 
+Data will stored in ./nexus-vision/data/calib_img
+"""
 import cv2
 import time
 from datetime import datetime

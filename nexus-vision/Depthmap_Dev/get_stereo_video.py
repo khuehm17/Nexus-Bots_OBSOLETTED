@@ -7,8 +7,8 @@ F_HEIGHT = 480
 # F_HEIGHT = 480
 F_FPS = 30
 
-stereo_left_dir = './data/stereo_left.avi'
-stereo_right_dir = './data/stereo_right.avi'
+stereo_left_dir = './nexus-vision/data/stereo_left.avi'
+stereo_right_dir = './nexus-vision/data/stereo_right.avi'
 
 # Define the codec and create VideoWriter object
 out_left = cv2.VideoWriter(stereo_left_dir, cv2.VideoWriter_fourcc('M','J','P','G'), F_FPS, (int(F_WIDTH/2), int(F_HEIGHT)))

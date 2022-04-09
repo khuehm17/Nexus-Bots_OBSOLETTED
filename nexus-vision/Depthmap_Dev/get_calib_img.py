@@ -1,10 +1,14 @@
+"""
+This script used for capture image in manual. 
+Press 'c' for capture and 'q' for release camera
+"""
 import cv2
 
 F_WIDTH = 640 * 2
 F_HEIGHT = 480
 F_FPS = 30
 
-output_dir = "./data/calib_img"
+output_dir = "./nexus-vision/data/calib_img"
 prefix = "img"
 left_prefix = 'left_cam_'
 right_prefix = 'right_cam_'
