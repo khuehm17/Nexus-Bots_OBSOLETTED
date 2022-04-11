@@ -1,0 +1,8 @@
+prefix=/home/hao/Nexus-Bots/nexus-ros/linux-pc/install
+
+Name: slam_rviz
+Description: Description of slam_rviz
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

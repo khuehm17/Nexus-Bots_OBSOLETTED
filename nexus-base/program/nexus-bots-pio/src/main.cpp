@@ -4,6 +4,7 @@
 #include "main.h"
 
 #define CONTROL_3W_TEST
+// #define DEBUG
 
 /***************************************************************************
  * CONTROL_3W_TEST
@@ -31,7 +32,7 @@
 #include <MatrixMath.h>
 #include <math.h>
 
-#define NR_OMNIWHEELS 3
+// #define NR_OMNIWHEELS 3
 
 float speed_kp = 0.35;
 float speed_kd = 0.2;
@@ -55,46 +56,68 @@ void cmdrobotCallback( const std_msgs::UInt16& cmd_msg)
     //Omni.setCarStop();
     Omni.setMotorAllStop();
     Omni.PIDRegulate();              // regulate the PID
+#ifdef DEBUG
+    printf("Stop");
+#endif
+    
   } 
   else if (cmd_msg.data == CMD_ADVANCE)
   {
     /* go straight ahead */
     Omni.setCarAdvance(SPEED_COMMON);
     Omni.PIDRegulate();
+#ifdef DEBUG
+    printf("Straight ahead");
+#endif
   }
   else if (cmd_msg.data == CMD_BACKOFF)
   {
     /* Back */
     Omni.setCarBackoff(SPEED_COMMON);
     Omni.PIDRegulate();
+#ifdef DEBUG
+    printf("Back");
+#endif
   }
   else if (cmd_msg.data == CMD_LEFT)
   {
     /* Turn left */
     Omni.setCarLeft(SPEED_COMMON);
     Omni.PIDRegulate();
+#ifdef DEBUG
+    printf("Turn left");
+#endif
   }
   else if (cmd_msg.data == CMD_RIGHT)
   {
     /* Turn Right */
     Omni.setCarRight(SPEED_COMMON);
-    Omni.PIDRegulate(); 
+    Omni.PIDRegulate();
+#ifdef DEBUG
+    printf("Turn right");
+#endif
   }
   else if (cmd_msg.data == CMD_ROTATELEFT)
   {
     /* ROTATE left */
     Omni.setCarRotateLeft(SPEED_COMMON);
     Omni.PIDRegulate();
+#ifdef DEBUG
+    printf("Rotate left");
+#endif
   }
   else if (cmd_msg.data == CMD_ROTATERIGHT)
   {
     /* ROTATE right */
     Omni.setCarRotateRight(SPEED_COMMON);
     Omni.PIDRegulate();
+#ifdef DEBUG
+    printf("Rotate right");
+#endif
   }  
 }
 
-ros::Subscriber<std_msgs::UInt16> sub("cmd_robot_control", cmdrobotCallback);
+ros::Subscriber<std_msgs::UInt16> sub("servo", cmdrobotCallback);
 
 void setup()
 {

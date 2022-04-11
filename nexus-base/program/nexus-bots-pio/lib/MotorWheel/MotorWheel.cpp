@@ -1,5 +1,16 @@
 #include <MotorWheel.h>
 
+/*
+ *  Construct function of Motor class
+ *
+ *  @param _pinPWM: ...
+ *  @param _pinDIR: ...
+ *  @param _pinIRQ: ...
+ *  @param _pinIRQB: ...
+ *  @param _isr: ...
+ *
+ *  @returns 	return non	
+ */
 Motor::Motor(unsigned char _pinPWM, unsigned char _pinDir,
 			 unsigned char _pinIRQ, unsigned char _pinIRQB,
 			 struct ISRVars *_isr)
@@ -192,6 +203,17 @@ bool Motor::PIDReset()
 	return true;
 }
 
+/*
+ * Initialization PID computation
+ *
+ *  @param kc: ...
+ *  @param taui: ...
+ *  @param taud: ...
+ *  @param sampleTime: ...
+ *
+ *  @returns 	1 if PID setup successfully
+ * 				0 if PID setup fail 
+ */
 bool Motor::PIDSetup(float kc, float taui, float taud, unsigned int sampleTime)
 {
 	debug();
