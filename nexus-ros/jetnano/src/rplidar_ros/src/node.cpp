@@ -312,7 +312,7 @@ int main(int argc, char * argv[]) {
         if(angle_compensate_multiple < 1) 
           angle_compensate_multiple = 1.0;
         max_distance = (float)current_scan_mode.max_distance;
-        ROS_INFO("current scan mode: %s, sample rate: %d Khz, max_distance: %.1f m, scan frequency:%.1f Hz, ", current_scan_mode.scan_mode,(int)(1000/current_scan_mode.us_per_sample+0.5),max_distance/2, scan_frequency); 
+        ROS_INFO("current scan mode: %s, sample rate: %d Khz, max_distance: %.1f m, scan frequency:%.1f Hz, ", current_scan_mode.scan_mode,(int)(1000/current_scan_mode.us_per_sample+0.5),max_distance, scan_frequency); 
     }
     else
     {

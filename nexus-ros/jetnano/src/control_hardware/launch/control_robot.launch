@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<launch>
+	<node name="serial_arduino_node" pkg="rosserial_arduino" type="serial_node.py">
+		<param name="port" type="string" value="/dev/ttyUSB1"/>
+		<param name="baudrate" type="int" value="57600"/>
+	</node>
+	<!--<node pkg="diff_wheeled_robot_gazebo" type="diff_wheeled_robot_key" name="diff_wheeled_robot_key" output="screen">
+        <param name="scale_linear" value="0.5" type="double"/>
+        <param name="scale_angular" value="1.5" type="double"/>
+        <remap from="turtlebot_teleop_keyboard/cmd_vel" to="/cmd_vel"/>
+    </node>-->
+    <node name="turtle_teleop" pkg="turtlesim" type="turtle_teleop_key"/>
+  	<node name="control_robot" pkg="control_hardware" type="control_hardware" />
+</launch>
