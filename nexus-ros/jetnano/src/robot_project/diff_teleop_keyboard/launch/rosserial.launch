@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- Node implement rosserial to communicate between board Tiva C EK-TM4C123GXL and Jetson Nano -->
+  <node name="rosserial" pkg="rosserial_python" type="serial_node.py" output="screen">
+	<param name="port" type="string" value="/dev/ttyACM0"/>
+	<param name="baud" type="int" value="115200"/>
+  </node>
+</launch>

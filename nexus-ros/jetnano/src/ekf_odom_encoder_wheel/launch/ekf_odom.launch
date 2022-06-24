@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+  <include file="$(find control_hardware)/launch/control_robot.launch"/>
+  <node name="ekf_odom" pkg="ekf_odom_encoder_wheel" type="ekf_odom_encoder_wheel"/>    
+</launch>

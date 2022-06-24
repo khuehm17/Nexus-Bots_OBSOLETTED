@@ -1,0 +1,8 @@
+prefix=/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/devel
+
+Name: ekf_odom_encoder_wheel
+Description: Description of ekf_odom_encoder_wheel
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

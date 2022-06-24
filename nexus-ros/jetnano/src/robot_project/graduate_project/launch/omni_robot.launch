@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+  
+  <!-- Robot move using teleop keyboard -->
+  <include file="$(find diff_teleop_keyboard)/launch/diff_teleop_keyboard.launch"/>
+  
+  <!-- Run RPLiDAR Node -->
+  <include file="$(find gmapping_slam)/launch/gmapping_slam.launch"/>
+
+  <!-- tf broadcaster -->
+  <include file="$(find mpu_6050_driver)/launch/imu.launch"/>
+  <!-- <include file="$(find odometry_encoder)/launch/tf_odom.launch"/> -->
+
+  <!-- Robot_pose_ekf -->
+  <!-- <include file="$(find robot_pose)/launch/robot_pose.launch"/> -->
+
+</launch>

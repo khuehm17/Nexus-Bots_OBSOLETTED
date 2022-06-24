@@ -1,0 +1,8 @@
+prefix=/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/devel
+
+Name: video_stream_opencv
+Description: Description of video_stream_opencv
+Version: 1.1.6
+Cflags: -I/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/devel/include
+Libs: -L${prefix}/lib 
+Requires: 

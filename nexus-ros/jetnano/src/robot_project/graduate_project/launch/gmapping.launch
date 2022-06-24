@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+  <include file="$(find graduate_project)/launch/position_robot.launch"/>
+  <include file="$(find gmapping_slam)/launch/gmapping_slam.launch"/>
+</launch>

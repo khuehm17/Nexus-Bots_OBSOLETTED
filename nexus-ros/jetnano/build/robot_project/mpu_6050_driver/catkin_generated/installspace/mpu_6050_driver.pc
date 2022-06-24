@@ -1,0 +1,8 @@
+prefix=/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/install
+
+Name: mpu_6050_driver
+Description: Description of mpu_6050_driver
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,0 +1,37 @@
+mobile_base_controller:
+    type    : "diff_drive_controller/DiffDriveController"
+    left_wheel: 'left_wheel_joint'
+    right_wheel: 'right_wheel_joint'
+    publish_rate: 50.0
+    pose_convariance_diagonal   : [0.001, 0.001, 1000000.0, 1000000.0, 1000000.0, 1000.0]
+    twist_convariance_diagonal  : [0.001, 0.001, 1000000.0, 1000000.0, 1000000.0, 1000.0]
+    cmd_vel_timeout: 0.25
+    base_frame_id: base_footprint
+    wheel_seperation: 0.12
+    wheel_radius: 0.24
+    odom_frame_id: odom
+    publish_cmd: true
+    allow_multiple_cmd_vel_publishers: true
+    enable_odom_tf: true
+
+    linear:
+      x:
+        has_velocity_limits: true
+        max_velocity: 0.35  # m/s
+        min_velocity: 0
+        has_acceleration_limits: true
+        max_acceleration: 3.5 # m/s^2
+        min_acceleration: 1.0
+        has_jerk_limits: true
+        max_jerk: 5.0 # m/s^3
+        min_jerk: 0.2 
+    angular:
+      z:
+        has_velocity_limits: true
+        max_velocity: 1.5   # rad/s
+        min_velocity: 0.1
+        has_acceleration_limits: true
+        max_acceleration: 1.6  # rad/s^2
+        min_acceleration: -0.2
+        has_jerk_limits: true
+        max_jerk: 1.3   #m/s^3

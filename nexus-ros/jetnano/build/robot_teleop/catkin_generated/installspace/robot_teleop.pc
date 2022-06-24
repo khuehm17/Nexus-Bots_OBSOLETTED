@@ -1,0 +1,8 @@
+prefix=/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/install
+
+Name: robot_teleop
+Description: Description of robot_teleop
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: geometry_msgs rospy
