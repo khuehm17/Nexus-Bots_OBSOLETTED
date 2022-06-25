@@ -1,1 +1,4 @@
 #Path of visual studio solution
+./nexus-vision/dev_cpp/.vs
+#
+./.gitignore.bak
