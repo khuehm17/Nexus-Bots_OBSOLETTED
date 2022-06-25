@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- Node control robot to move using keypress on keyboard -->
+  <node name="diff_teleop_keyboard" pkg="diff_teleop_keyboard" type="diff_teleop_keyboard.py" output="screen"/>
+  
+</launch>

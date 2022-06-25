@@ -1,1 +1,0 @@
-/usr/bin/c++    -rdynamic CMakeFiles/bmx160_acc_example.dir/src/bmx160_acc_example.cpp.o  -o /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/devel/lib/imu_bmx160/bmx160_acc_example 

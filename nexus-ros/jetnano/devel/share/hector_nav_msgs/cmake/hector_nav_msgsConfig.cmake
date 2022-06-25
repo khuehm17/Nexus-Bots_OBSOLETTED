@@ -67,7 +67,7 @@ set(hector_nav_msgs_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(hector_nav_msgs_SOURCE_PREFIX /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/src/hector_slam/hector_nav_msgs)
+  set(hector_nav_msgs_SOURCE_PREFIX /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/src/robot_project/hector_slam/hector_nav_msgs)
   set(hector_nav_msgs_DEVEL_PREFIX /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/devel)
   set(hector_nav_msgs_INSTALL_PREFIX "")
   set(hector_nav_msgs_PREFIX ${hector_nav_msgs_DEVEL_PREFIX})
@@ -110,7 +110,7 @@ if(NOT "/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/devel/include " S
         message(FATAL_ERROR "Project 'hector_nav_msgs' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'hector_nav_msgs' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/src/hector_slam/hector_nav_msgs/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'hector_nav_msgs' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/src/robot_project/hector_slam/hector_nav_msgs/${idir}'.  ${_report}")
     endif()
     _list_append_unique(hector_nav_msgs_INCLUDE_DIRS ${include})
   endforeach()

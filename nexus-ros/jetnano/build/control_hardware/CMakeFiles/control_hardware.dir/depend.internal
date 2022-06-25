@@ -61,7 +61,6 @@ control_hardware/CMakeFiles/control_hardware.dir/src/control_hardware.cpp.o
  /opt/ros/melodic/include/ros/wall_timer.h
  /opt/ros/melodic/include/ros/wall_timer_options.h
  /opt/ros/melodic/include/rosconsole/macros_generated.h
- /opt/ros/melodic/include/std_msgs/String.h
- /opt/ros/melodic/include/std_msgs/UInt16.h
+ /opt/ros/melodic/include/std_msgs/Float32.h
  /opt/ros/melodic/include/xmlrpcpp/XmlRpcDecl.h
  /opt/ros/melodic/include/xmlrpcpp/XmlRpcValue.h

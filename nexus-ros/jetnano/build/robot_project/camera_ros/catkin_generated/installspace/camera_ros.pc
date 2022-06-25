@@ -1,0 +1,8 @@
+prefix=/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/install
+
+Name: camera_ros
+Description: Description of camera_ros
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

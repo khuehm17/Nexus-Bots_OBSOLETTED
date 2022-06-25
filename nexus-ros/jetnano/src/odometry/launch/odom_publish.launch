@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+  <node name="odometry_pub" pkg="odometry" type="odometry"/>
+</launch>

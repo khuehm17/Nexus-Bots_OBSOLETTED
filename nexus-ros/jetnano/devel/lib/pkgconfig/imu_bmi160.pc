@@ -1,8 +1,0 @@
-prefix=/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/devel
-
-Name: imu_bmi160
-Description: Description of imu_bmi160
-Version: 0.0.0
-Cflags: -I/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/src/imu_bmi160/include
-Libs: -L${prefix}/lib -limu_bmi160
-Requires: roscpp sensor_msgs

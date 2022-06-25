@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+  <include file="$(find diff_teleop_keyboard)/launch/diff_teleop_keyboard.launch"/>
+  <include file="$(find hector_slam_launch)/launch/tutorial.launch"/>
+</launch>

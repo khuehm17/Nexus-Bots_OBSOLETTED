@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+  <node name="initial_pose_2d" pkg="robot_pose" type="rviz_click_to_2d"/>
+</launch>
