@@ -14,14 +14,13 @@
   - https://www.youtube.com/watch?v=GpU1Vx-b3VA
   - https://courses.cs.washington.edu/courses/cse455/09wi/Lects/      
       (List of ComputerVision lecture)
-  - https://futuretechmaker.wordpress.com/projects/cv_autonomous_car/
 ## Test ELP stereo camera
 - Connect the camera to the PC
 - Run test_ELPCAM.py to check if the camera worked or not
 
 ## Stereo camera calibration procedure
 - Step 1: Get images for calibration
-  - Run **get_calib_img_ver02.py** to get the camera calibration data
+  - Run get_calib_img.py to get the camera calibration data
 - Step 2: Single camera calibration
   - Calibrate left camera:
     ```
@@ -35,21 +34,12 @@
   ```
   $ python3 stereo_calib.py
   ```
-- Step 4: Display disparity map (**With exist video**)
-  - Collect video before display disparity
-    ``` 
-    $ get_stereo_video.py 
-    ```
-    Show disparity map:
-    ```
-    $ python3 disparity_map.py
-    ```
+- Step 4: Show disparity map (Using recorded video)
+  ```
+  $ python3 disparity_map.py
+  ```
 ## ERROR: module 'cv2.cv2' has no attribute 'ximgproc'
 - Fix:
   ```
   $ pip install --force-reinstall opencv-contrib-python==4.1.2.30
   ```
-
-
-
-update from dev-stereo branch
