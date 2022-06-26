@@ -1,8 +1,0 @@
-prefix=/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/devel
-
-Name: opencv_tests
-Description: Description of opencv_tests
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

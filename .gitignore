@@ -1,0 +1,7 @@
+#Path of visual studio solution
+./nexus-vision/dev_cpp/.vs
+#
+./.gitignore.bak
+
+nexus-ros/jetnano/build
+nexus-ros/jetnano/devel

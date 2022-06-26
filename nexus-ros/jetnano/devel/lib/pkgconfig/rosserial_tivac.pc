@@ -1,8 +1,0 @@
-prefix=/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/devel
-
-Name: rosserial_tivac
-Description: Description of rosserial_tivac
-Version: 0.7.5
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

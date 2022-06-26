@@ -1,8 +1,0 @@
-prefix=/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/devel
-
-Name: diff_teleop_keyboard
-Description: Description of diff_teleop_keyboard
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib -ldiff_teleop_keyboard
-Requires: geometry_msgs roscpp rospy sensor_msgs std_msgs

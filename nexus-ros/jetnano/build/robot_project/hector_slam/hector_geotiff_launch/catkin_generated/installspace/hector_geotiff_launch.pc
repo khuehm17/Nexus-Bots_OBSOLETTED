@@ -1,8 +1,0 @@
-prefix=/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/install
-
-Name: hector_geotiff_launch
-Description: Description of hector_geotiff_launch
-Version: 0.5.2
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
