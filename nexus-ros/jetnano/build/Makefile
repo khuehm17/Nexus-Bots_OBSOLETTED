@@ -1481,19 +1481,6 @@ tf_broadcaster_odom/fast:
 .PHONY : tf_broadcaster_odom/fast
 
 #=============================================================================
-# Target rules for targets named rviz_click_to_2d
-
-# Build rule for target.
-rviz_click_to_2d: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 rviz_click_to_2d
-.PHONY : rviz_click_to_2d
-
-# fast build rule for target.
-rviz_click_to_2d/fast:
-	$(MAKE) -f robot_project/robot_pose/CMakeFiles/rviz_click_to_2d.dir/build.make robot_project/robot_pose/CMakeFiles/rviz_click_to_2d.dir/build
-.PHONY : rviz_click_to_2d/fast
-
-#=============================================================================
 # Target rules for targets named std_srvs_generate_messages_cpp
 
 # Build rule for target.
@@ -2170,6 +2157,19 @@ move_base_gencfg/fast:
 .PHONY : move_base_gencfg/fast
 
 #=============================================================================
+# Target rules for targets named simple_navigation_goals
+
+# Build rule for target.
+simple_navigation_goals: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 simple_navigation_goals
+.PHONY : simple_navigation_goals
+
+# fast build rule for target.
+simple_navigation_goals/fast:
+	$(MAKE) -f robot_project/navstack_pub/CMakeFiles/simple_navigation_goals.dir/build.make robot_project/navstack_pub/CMakeFiles/simple_navigation_goals.dir/build
+.PHONY : simple_navigation_goals/fast
+
+#=============================================================================
 # Target rules for targets named move_base_msgs_generate_messages_eus
 
 # Build rule for target.
@@ -2335,7 +2335,6 @@ help:
 	@echo "... odometry"
 	@echo "... tf_odom"
 	@echo "... tf_broadcaster_odom"
-	@echo "... rviz_click_to_2d"
 	@echo "... std_srvs_generate_messages_cpp"
 	@echo "... std_srvs_generate_messages_eus"
 	@echo "... std_srvs_generate_messages_lisp"
@@ -2388,6 +2387,7 @@ help:
 	@echo "... run_tests_video_stream_opencv_rostest_test_test_video_file.test"
 	@echo "... move_base_msgs_generate_messages_cpp"
 	@echo "... move_base_gencfg"
+	@echo "... simple_navigation_goals"
 	@echo "... move_base_msgs_generate_messages_eus"
 	@echo "... move_base_msgs_generate_messages_lisp"
 	@echo "... move_base_msgs_generate_messages_nodejs"

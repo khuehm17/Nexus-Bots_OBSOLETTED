@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+    <node name="simple_nav_goal" pkg="navstack_pub" type="simple_navigation_goals"/>
+</launch>

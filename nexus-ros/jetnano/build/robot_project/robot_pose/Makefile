@@ -68,17 +68,26 @@ install/strip/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
 .PHONY : install/strip/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
 
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
 
 # Special rule for the target test
 test:
@@ -91,15 +100,28 @@ test/fast: test
 
 .PHONY : test/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
 
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
 
-.PHONY : list_install_components/fast
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # Special rule for the target install
 install: preinstall
@@ -112,28 +134,6 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
-
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -167,48 +167,6 @@ depend:
 	cd /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-# Convenience name for target.
-robot_project/robot_pose/CMakeFiles/rviz_click_to_2d.dir/rule:
-	cd /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build && $(MAKE) -f CMakeFiles/Makefile2 robot_project/robot_pose/CMakeFiles/rviz_click_to_2d.dir/rule
-.PHONY : robot_project/robot_pose/CMakeFiles/rviz_click_to_2d.dir/rule
-
-# Convenience name for target.
-rviz_click_to_2d: robot_project/robot_pose/CMakeFiles/rviz_click_to_2d.dir/rule
-
-.PHONY : rviz_click_to_2d
-
-# fast build rule for target.
-rviz_click_to_2d/fast:
-	cd /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build && $(MAKE) -f robot_project/robot_pose/CMakeFiles/rviz_click_to_2d.dir/build.make robot_project/robot_pose/CMakeFiles/rviz_click_to_2d.dir/build
-.PHONY : rviz_click_to_2d/fast
-
-src/rviz_click_to_2d.o: src/rviz_click_to_2d.cpp.o
-
-.PHONY : src/rviz_click_to_2d.o
-
-# target to build an object file
-src/rviz_click_to_2d.cpp.o:
-	cd /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build && $(MAKE) -f robot_project/robot_pose/CMakeFiles/rviz_click_to_2d.dir/build.make robot_project/robot_pose/CMakeFiles/rviz_click_to_2d.dir/src/rviz_click_to_2d.cpp.o
-.PHONY : src/rviz_click_to_2d.cpp.o
-
-src/rviz_click_to_2d.i: src/rviz_click_to_2d.cpp.i
-
-.PHONY : src/rviz_click_to_2d.i
-
-# target to preprocess a source file
-src/rviz_click_to_2d.cpp.i:
-	cd /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build && $(MAKE) -f robot_project/robot_pose/CMakeFiles/rviz_click_to_2d.dir/build.make robot_project/robot_pose/CMakeFiles/rviz_click_to_2d.dir/src/rviz_click_to_2d.cpp.i
-.PHONY : src/rviz_click_to_2d.cpp.i
-
-src/rviz_click_to_2d.s: src/rviz_click_to_2d.cpp.s
-
-.PHONY : src/rviz_click_to_2d.s
-
-# target to generate assembly for a file
-src/rviz_click_to_2d.cpp.s:
-	cd /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build && $(MAKE) -f robot_project/robot_pose/CMakeFiles/rviz_click_to_2d.dir/build.make robot_project/robot_pose/CMakeFiles/rviz_click_to_2d.dir/src/rviz_click_to_2d.cpp.s
-.PHONY : src/rviz_click_to_2d.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -216,16 +174,12 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
-	@echo "... install/local"
-	@echo "... test"
-	@echo "... list_install_components"
-	@echo "... rviz_click_to_2d"
-	@echo "... install"
 	@echo "... edit_cache"
+	@echo "... list_install_components"
+	@echo "... test"
+	@echo "... install/local"
 	@echo "... rebuild_cache"
-	@echo "... src/rviz_click_to_2d.o"
-	@echo "... src/rviz_click_to_2d.i"
-	@echo "... src/rviz_click_to_2d.s"
+	@echo "... install"
 .PHONY : help
 
 

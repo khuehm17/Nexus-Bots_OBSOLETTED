@@ -7,14 +7,13 @@
   <!-- <include file="$(find odometry_encoder)/launch/tf_odom.launch"/> -->
   <include file="$(find robot_pose)/launch/robot_pose.launch"/>
   <!-- Remap topic odom_combined to initial pose-->
-  <remap from="/robot_pose_ekf/odom_combined" to="/initialpose"/>
-
+  <remap from="robot_pose_ekf/odom_combined" to="initialpose"/>
   <!-- Transform data component of omni_robot-->
   <group>
-    <node pkg="tf" type="static_transform_publisher" name="base_link_broadcaster" args="0 0 0.19 0 0 0 base_footprint omni_robot 30" />
+    <node pkg="tf" type="static_transform_publisher" name="base_link_broadcaster" args="0 0 0 0 0 0 base_footprint omni_robot 30" />
 
-    <node pkg="tf" type="static_transform_publisher" name="base_link_to_laser" args="0.06 0 0.08 0 0 0 omni_robot laser 30" />
+    <node pkg="tf" type="static_transform_publisher" name="base_link_to_laser" args="0.0 0.06 0.18 0 0 0 omni_robot laser 30" />
 	
-    <node pkg="tf" type="static_transform_publisher" name="imu_broadcaster" args="0 0.06 0.02 0 0 0 omni_robot imu_link 30" />
+    <!-- <node pkg="tf" type="static_transform_publisher" name="imu_broadcaster" args="0 0.06 0.02 0 0 0 omni_robot imu_link 30" /> -->
   </group>
 </launch>

@@ -310,13 +310,12 @@
 /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/robot_project/odometry_encoder/CMakeFiles/list_install_components.dir
 /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/robot_project/odometry_encoder/CMakeFiles/rebuild_cache.dir
 /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/robot_project/robot_pose/CMakeFiles/install/strip.dir
-/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/robot_project/robot_pose/CMakeFiles/install/local.dir
-/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/robot_project/robot_pose/CMakeFiles/test.dir
-/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/robot_project/robot_pose/CMakeFiles/list_install_components.dir
-/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/robot_project/robot_pose/CMakeFiles/rviz_click_to_2d.dir
-/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/robot_project/robot_pose/CMakeFiles/install.dir
 /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/robot_project/robot_pose/CMakeFiles/edit_cache.dir
+/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/robot_project/robot_pose/CMakeFiles/list_install_components.dir
+/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/robot_project/robot_pose/CMakeFiles/test.dir
+/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/robot_project/robot_pose/CMakeFiles/install/local.dir
 /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/robot_project/robot_pose/CMakeFiles/rebuild_cache.dir
+/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/robot_project/robot_pose/CMakeFiles/install.dir
 /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/omni_project_robot/CMakeFiles/install/strip.dir
 /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/omni_project_robot/CMakeFiles/install.dir
 /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/omni_project_robot/CMakeFiles/list_install_components.dir
@@ -396,6 +395,7 @@
 /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/robot_project/navstack_pub/CMakeFiles/test.dir
 /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/robot_project/navstack_pub/CMakeFiles/move_base_msgs_generate_messages_cpp.dir
 /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/robot_project/navstack_pub/CMakeFiles/move_base_gencfg.dir
+/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/robot_project/navstack_pub/CMakeFiles/simple_navigation_goals.dir
 /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/robot_project/navstack_pub/CMakeFiles/move_base_msgs_generate_messages_eus.dir
 /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/robot_project/navstack_pub/CMakeFiles/move_base_msgs_generate_messages_lisp.dir
 /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/robot_project/navstack_pub/CMakeFiles/move_base_msgs_generate_messages_nodejs.dir

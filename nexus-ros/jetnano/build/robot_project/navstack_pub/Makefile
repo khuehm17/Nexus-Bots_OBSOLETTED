@@ -198,6 +198,21 @@ move_base_gencfg/fast:
 .PHONY : move_base_gencfg/fast
 
 # Convenience name for target.
+robot_project/navstack_pub/CMakeFiles/simple_navigation_goals.dir/rule:
+	cd /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build && $(MAKE) -f CMakeFiles/Makefile2 robot_project/navstack_pub/CMakeFiles/simple_navigation_goals.dir/rule
+.PHONY : robot_project/navstack_pub/CMakeFiles/simple_navigation_goals.dir/rule
+
+# Convenience name for target.
+simple_navigation_goals: robot_project/navstack_pub/CMakeFiles/simple_navigation_goals.dir/rule
+
+.PHONY : simple_navigation_goals
+
+# fast build rule for target.
+simple_navigation_goals/fast:
+	cd /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build && $(MAKE) -f robot_project/navstack_pub/CMakeFiles/simple_navigation_goals.dir/build.make robot_project/navstack_pub/CMakeFiles/simple_navigation_goals.dir/build
+.PHONY : simple_navigation_goals/fast
+
+# Convenience name for target.
 robot_project/navstack_pub/CMakeFiles/move_base_msgs_generate_messages_eus.dir/rule:
 	cd /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build && $(MAKE) -f CMakeFiles/Makefile2 robot_project/navstack_pub/CMakeFiles/move_base_msgs_generate_messages_eus.dir/rule
 .PHONY : robot_project/navstack_pub/CMakeFiles/move_base_msgs_generate_messages_eus.dir/rule
@@ -257,6 +272,33 @@ move_base_msgs_generate_messages_py/fast:
 	cd /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build && $(MAKE) -f robot_project/navstack_pub/CMakeFiles/move_base_msgs_generate_messages_py.dir/build.make robot_project/navstack_pub/CMakeFiles/move_base_msgs_generate_messages_py.dir/build
 .PHONY : move_base_msgs_generate_messages_py/fast
 
+src/simple_navigation_goals.o: src/simple_navigation_goals.cpp.o
+
+.PHONY : src/simple_navigation_goals.o
+
+# target to build an object file
+src/simple_navigation_goals.cpp.o:
+	cd /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build && $(MAKE) -f robot_project/navstack_pub/CMakeFiles/simple_navigation_goals.dir/build.make robot_project/navstack_pub/CMakeFiles/simple_navigation_goals.dir/src/simple_navigation_goals.cpp.o
+.PHONY : src/simple_navigation_goals.cpp.o
+
+src/simple_navigation_goals.i: src/simple_navigation_goals.cpp.i
+
+.PHONY : src/simple_navigation_goals.i
+
+# target to preprocess a source file
+src/simple_navigation_goals.cpp.i:
+	cd /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build && $(MAKE) -f robot_project/navstack_pub/CMakeFiles/simple_navigation_goals.dir/build.make robot_project/navstack_pub/CMakeFiles/simple_navigation_goals.dir/src/simple_navigation_goals.cpp.i
+.PHONY : src/simple_navigation_goals.cpp.i
+
+src/simple_navigation_goals.s: src/simple_navigation_goals.cpp.s
+
+.PHONY : src/simple_navigation_goals.s
+
+# target to generate assembly for a file
+src/simple_navigation_goals.cpp.s:
+	cd /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build && $(MAKE) -f robot_project/navstack_pub/CMakeFiles/simple_navigation_goals.dir/build.make robot_project/navstack_pub/CMakeFiles/simple_navigation_goals.dir/src/simple_navigation_goals.cpp.s
+.PHONY : src/simple_navigation_goals.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -271,11 +313,15 @@ help:
 	@echo "... test"
 	@echo "... move_base_msgs_generate_messages_cpp"
 	@echo "... move_base_gencfg"
+	@echo "... simple_navigation_goals"
 	@echo "... move_base_msgs_generate_messages_eus"
 	@echo "... move_base_msgs_generate_messages_lisp"
 	@echo "... move_base_msgs_generate_messages_nodejs"
 	@echo "... rebuild_cache"
 	@echo "... move_base_msgs_generate_messages_py"
+	@echo "... src/simple_navigation_goals.o"
+	@echo "... src/simple_navigation_goals.i"
+	@echo "... src/simple_navigation_goals.s"
 .PHONY : help
 
 

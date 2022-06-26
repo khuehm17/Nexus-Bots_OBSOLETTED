@@ -4300,12 +4300,12 @@ clean: robot_project/odometry_encoder/CMakeFiles/tf_broadcaster_odom.dir/clean
 # Directory level rules for directory robot_project/robot_pose
 
 # Convenience name for "all" pass in the directory.
-robot_project/robot_pose/all: robot_project/robot_pose/CMakeFiles/rviz_click_to_2d.dir/all
+robot_project/robot_pose/all:
 
 .PHONY : robot_project/robot_pose/all
 
 # Convenience name for "clean" pass in the directory.
-robot_project/robot_pose/clean: robot_project/robot_pose/CMakeFiles/rviz_click_to_2d.dir/clean
+robot_project/robot_pose/clean:
 
 .PHONY : robot_project/robot_pose/clean
 
@@ -4313,43 +4313,6 @@ robot_project/robot_pose/clean: robot_project/robot_pose/CMakeFiles/rviz_click_t
 robot_project/robot_pose/preinstall:
 
 .PHONY : robot_project/robot_pose/preinstall
-
-#=============================================================================
-# Target rules for target robot_project/robot_pose/CMakeFiles/rviz_click_to_2d.dir
-
-# All Build rule for target.
-robot_project/robot_pose/CMakeFiles/rviz_click_to_2d.dir/all:
-	$(MAKE) -f robot_project/robot_pose/CMakeFiles/rviz_click_to_2d.dir/build.make robot_project/robot_pose/CMakeFiles/rviz_click_to_2d.dir/depend
-	$(MAKE) -f robot_project/robot_pose/CMakeFiles/rviz_click_to_2d.dir/build.make robot_project/robot_pose/CMakeFiles/rviz_click_to_2d.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/CMakeFiles --progress-num=91,92 "Built target rviz_click_to_2d"
-.PHONY : robot_project/robot_pose/CMakeFiles/rviz_click_to_2d.dir/all
-
-# Include target in all.
-all: robot_project/robot_pose/CMakeFiles/rviz_click_to_2d.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-robot_project/robot_pose/CMakeFiles/rviz_click_to_2d.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 robot_project/robot_pose/CMakeFiles/rviz_click_to_2d.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/CMakeFiles 0
-.PHONY : robot_project/robot_pose/CMakeFiles/rviz_click_to_2d.dir/rule
-
-# Convenience name for target.
-rviz_click_to_2d: robot_project/robot_pose/CMakeFiles/rviz_click_to_2d.dir/rule
-
-.PHONY : rviz_click_to_2d
-
-# clean rule for target.
-robot_project/robot_pose/CMakeFiles/rviz_click_to_2d.dir/clean:
-	$(MAKE) -f robot_project/robot_pose/CMakeFiles/rviz_click_to_2d.dir/build.make robot_project/robot_pose/CMakeFiles/rviz_click_to_2d.dir/clean
-.PHONY : robot_project/robot_pose/CMakeFiles/rviz_click_to_2d.dir/clean
-
-# clean rule for target.
-clean: robot_project/robot_pose/CMakeFiles/rviz_click_to_2d.dir/clean
-
-.PHONY : clean
 
 #=============================================================================
 # Directory level rules for directory omni_project_robot
@@ -6110,13 +6073,14 @@ clean: robot_project/video_stream_opencv/CMakeFiles/run_tests_video_stream_openc
 # Directory level rules for directory robot_project/navstack_pub
 
 # Convenience name for "all" pass in the directory.
-robot_project/navstack_pub/all:
+robot_project/navstack_pub/all: robot_project/navstack_pub/CMakeFiles/simple_navigation_goals.dir/all
 
 .PHONY : robot_project/navstack_pub/all
 
 # Convenience name for "clean" pass in the directory.
 robot_project/navstack_pub/clean: robot_project/navstack_pub/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/clean
 robot_project/navstack_pub/clean: robot_project/navstack_pub/CMakeFiles/move_base_gencfg.dir/clean
+robot_project/navstack_pub/clean: robot_project/navstack_pub/CMakeFiles/simple_navigation_goals.dir/clean
 robot_project/navstack_pub/clean: robot_project/navstack_pub/CMakeFiles/move_base_msgs_generate_messages_eus.dir/clean
 robot_project/navstack_pub/clean: robot_project/navstack_pub/CMakeFiles/move_base_msgs_generate_messages_lisp.dir/clean
 robot_project/navstack_pub/clean: robot_project/navstack_pub/CMakeFiles/move_base_msgs_generate_messages_nodejs.dir/clean
@@ -6190,6 +6154,43 @@ robot_project/navstack_pub/CMakeFiles/move_base_gencfg.dir/clean:
 
 # clean rule for target.
 clean: robot_project/navstack_pub/CMakeFiles/move_base_gencfg.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target robot_project/navstack_pub/CMakeFiles/simple_navigation_goals.dir
+
+# All Build rule for target.
+robot_project/navstack_pub/CMakeFiles/simple_navigation_goals.dir/all:
+	$(MAKE) -f robot_project/navstack_pub/CMakeFiles/simple_navigation_goals.dir/build.make robot_project/navstack_pub/CMakeFiles/simple_navigation_goals.dir/depend
+	$(MAKE) -f robot_project/navstack_pub/CMakeFiles/simple_navigation_goals.dir/build.make robot_project/navstack_pub/CMakeFiles/simple_navigation_goals.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/CMakeFiles --progress-num=91,92 "Built target simple_navigation_goals"
+.PHONY : robot_project/navstack_pub/CMakeFiles/simple_navigation_goals.dir/all
+
+# Include target in all.
+all: robot_project/navstack_pub/CMakeFiles/simple_navigation_goals.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+robot_project/navstack_pub/CMakeFiles/simple_navigation_goals.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 robot_project/navstack_pub/CMakeFiles/simple_navigation_goals.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/blackwind/workspace/Nexus-Bots/nexus-ros/jetnano/build/CMakeFiles 0
+.PHONY : robot_project/navstack_pub/CMakeFiles/simple_navigation_goals.dir/rule
+
+# Convenience name for target.
+simple_navigation_goals: robot_project/navstack_pub/CMakeFiles/simple_navigation_goals.dir/rule
+
+.PHONY : simple_navigation_goals
+
+# clean rule for target.
+robot_project/navstack_pub/CMakeFiles/simple_navigation_goals.dir/clean:
+	$(MAKE) -f robot_project/navstack_pub/CMakeFiles/simple_navigation_goals.dir/build.make robot_project/navstack_pub/CMakeFiles/simple_navigation_goals.dir/clean
+.PHONY : robot_project/navstack_pub/CMakeFiles/simple_navigation_goals.dir/clean
+
+# clean rule for target.
+clean: robot_project/navstack_pub/CMakeFiles/simple_navigation_goals.dir/clean
 
 .PHONY : clean
 
