@@ -1,0 +1,5 @@
+# Path of visual studio solution
+./nexus-vision/dev_cpp/.vs.
+
+# Path of notepad backup files
+./.gitignore.bak
