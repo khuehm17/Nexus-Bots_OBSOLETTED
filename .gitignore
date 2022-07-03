@@ -3,3 +3,5 @@
 
 # Path of notepad backup files
 .gitignore.bak
+nexus-vision/dev_cpp/.vs/dev_cpp/v17/Browse.VC.db
+nexus-vision/dev_python/tempCodeRunnerFile.py
