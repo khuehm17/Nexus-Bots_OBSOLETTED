@@ -56,9 +56,9 @@ def depth_map(imgL, imgR):
 
 
 if __name__ == '__main__':
-    df_calib_param = './data/stereo.yml'
-    df_left_source = './data/stereo_left.avi'
-    df_right_source = './data/stereo_right.avi'
+    df_calib_param = './nexus-vision/dev_python/data/stereo.yml'
+    df_left_source = './nexus-vision/dev_python/data/stereo_left.avi'
+    df_right_source = './nexus-vision/dev_python/data/stereo_right.avi'
     df_real_time = 1
     parser = argparse.ArgumentParser(description='Camera calibration')
     parser.add_argument('--calib_param', type=str, required=False,
