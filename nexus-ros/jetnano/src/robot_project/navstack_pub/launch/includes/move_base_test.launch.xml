@@ -1,0 +1,11 @@
+<launch>
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+    <param name="base_global_planner" value="navfn/NavfnROS"/>
+    <param name="base_local_planner" value="dwa_local_planner/DWAPlannerROS"/>
+    <rosparam file="$(find navstack_pub)/param/common_costmap_test.yaml" command="load" ns="global_costmap"/>
+    <rosparam file="$(find navstack_pub)/param/planner.yaml" command="load"/>
+    <rosparam file="$(find navstack_pub)/param/common_costmap_test.yaml" command="load" ns="local_costmap"/>
+    <rosparam file="$(find navstack_pub)/param/local_costmap_test.yaml" command="load" ns="local_costmap" />
+    <rosparam file="$(find navstack_pub)/param/global_costmap_test.yaml" command="load" ns="global_costmap" />  
+  </node>
+</launch>

@@ -1,7 +1,18 @@
 global_costmap:
    global_frame: map
    robot_base_frame: base_footprint
-   update_frequency: 10.0
-   publish_frequency: 10.0
-   static_map: true
-   transform_tolerance: 5
+   update_frequency: 5.0
+   publish_frequency: 2.0
+   transform_tolerance: 1.5
+   rolling_window: false
+   track_unknown_space: true
+   plugins:
+     - {name: static_layer,     type: "costmap_2d::StaticLayer"}
+     - {name: inflation_layer,  type: "costmap_2d::InflationLayer"}
+
+   # Layer Definitions.
+   static_layer:
+     map_topic: /map
+     subscribe_to_updates: true
+   inflation_layer:
+     inflation_radius: 0.2

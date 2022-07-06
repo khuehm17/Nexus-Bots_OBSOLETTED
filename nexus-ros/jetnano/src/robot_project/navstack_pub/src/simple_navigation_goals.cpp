@@ -10,6 +10,8 @@ int main(int argc, char** argv)
   ros::init(argc, argv, "simple_navigation_goals");
   double target_goal_x = 0;
   double target_goal_y = 0;
+  double target_ori_z = 0.0;
+  double target_ori_w = 0.0;
   // tell the action client that we want to spin a thread by default
   MoveBaseClient ac("move_base", true);
 
@@ -23,10 +25,16 @@ int main(int argc, char** argv)
   while (run)
   {
     move_base_msgs::MoveBaseGoal goal;
-    std::cout << "\nEnter the position that you want robot move" << std::endl;
+    std::cout << "\nEnter the position and orientation that you want robot move" << std::endl;
+    std::cout << "Position x    : ";
     std::cin >> target_goal_x;
+    std::cout << "Position y    : ";
     std::cin >> target_goal_y;
-    std::cout << "\nRobot will move to the target position x: " << target_goal_x <<" y: " << target_goal_y << std::endl;
+    std::cout << "Orientation z : ";
+    std::cin >> target_ori_z;
+    std::cout << "Orientation w : ";
+    std::cin >> target_ori_w;
+    std::cout << "\nRobot will move to the target position x: " << target_goal_x <<" y: " << target_goal_y << ". Orientation z: " << target_ori_z << " and orientation w: " << target_ori_w << std::endl;
     // we'll send a goal to the robot to move
     // goal.target_pose.header.frame_id = "base_footprint";
     goal.target_pose.header.frame_id = "map";
@@ -34,7 +42,8 @@ int main(int argc, char** argv)
 
     goal.target_pose.pose.position.x = target_goal_x;
     goal.target_pose.pose.position.y = target_goal_y;
-    goal.target_pose.pose.orientation.w = 1.0;
+    goal.target_pose.pose.orientation.z = target_ori_z;
+    goal.target_pose.pose.orientation.w = target_ori_w;
 
     ROS_INFO("Sending goal");
     ac.sendGoal(goal);
@@ -43,7 +52,7 @@ int main(int argc, char** argv)
 
     if (ac.getState() == actionlib::SimpleClientGoalState::SUCCEEDED)
     {
-      ROS_INFO("Hooray, the basae moved");
+      ROS_INFO("Hooray, the base moved");
     }
     else
     {

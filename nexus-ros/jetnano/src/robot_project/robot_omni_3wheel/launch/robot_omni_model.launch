@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="omni_model" default="$(find xacro)/xacro '$(find robot_omni_3wheel)/urdf/omni_3wheels.xacro'"/>
+
+  <!-- URDF XML robot description loaded on the Parameter Server -->
+  <param name="robot_description" command="$(arg omni_model)"/>
+  
+  <!-- Start robot state publisher -->
+  <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen">
+    <param name="publisher_frequency" type="double" value="50.0"/>  
+  </node>
+</launch>

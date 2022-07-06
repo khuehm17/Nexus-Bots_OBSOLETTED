@@ -1,0 +1,410 @@
+<?xml version="1.0"?>
+<robot name="omni_3wheels_robot" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <!-- Define the colors used in this robot -->
+    <material name="Yellow">
+        <color rgba="1 1 0 1"/>
+    </material>
+
+    <material name="Black">
+        <color rgba="0 0 0 1"/>
+    </material>
+
+    <material name="Red">
+        <color rgba="1 0 0 1"/>
+    </material>
+
+    <material name="White">
+        <color rgba="1 1 1 1"/>
+    </material>
+
+    <material name="Blue">
+        <color rgba="0 0 1 1"/>
+    </material>
+
+    <!-- Property list -->
+
+    <!--All units in m-kg-s-radians unit system -->
+    <xacro:property name="M_PI" value="3.1415926535897931" />
+    <xacro:property name="M_PI_2" value="1.570796327" />
+    <xacro:property name="DEG_TO_RAD" value="0.017453293" />
+
+    <!-- Main body Cylinder base 1st floor -->
+    <xacro:property name="base_f1_height" value="0.005"/> <!-- base first floor height -->
+    <xacro:property name="base_f1_radius" value="0.15"/> <!-- Radius is 15 cm -->
+    <xacro:property name="base_f1_mass" value="0.5"/> <!-- in kg -->
+
+    <!-- Main body Cylinder base 2nd floor -->
+    <xacro:property name="base_f2_height" value="0.005"/> <!-- base second floor height -->
+    <xacro:property name="base_f2_radius" value="0.15"/> <!-- Radius is 15 cm -->
+    <xacro:property name="base_f2_mass" value="0.5"/> <!-- in kg -->
+
+    <!-- Main body Cylinder base 3rd floor -->
+    <xacro:property name="base_f3_height" value="0.005"/> <!-- base third floor height -->
+    <xacro:property name="base_f3_radius" value="0.15"/> <!-- Radius is 15 cm -->
+    <xacro:property name="base_f3_mass" value="0.5"/> <!-- in kg -->
+
+    <!-- Pillar body Cylinder -->
+    <xacro:property name="pillar_height" value="0.1"/>
+    <xacro:property name="pillar_radius" value="0.01"/>
+
+    <!-- Wheels -->
+    <xacro:property name="wheel_radius" value="0.04"/>
+    <xacro:property name="wheel_height" value="0.03"/>
+    <xacro:property name="wheel_mass" value="1.0"/>
+
+    <xacro:property name="base_x_origin_to_wheel_origin" value="0.25"/>
+    <xacro:property name="base_y_origin_to_wheel_origin" value="0.3"/>
+    <xacro:property name="base_z_origin_to_wheel_origin" value="0.0"/>
+
+    <!-- LiDAR -->
+    <xacro:property name="lidar_height" value="0.02"/>
+    <xacro:property name="lidar_radius" value="0.03"/>
+    <xacro:property name="lidar_mass" value="0.2"/>
+
+    <!-- Macro for calculating inertia of cylinder -->
+    <xacro:macro name="cylinder_inertia" params="m r h">
+        <inertia ixx="${m*(3*r*r+h*h)/12}" ixy = "0" ixz = "0"
+                 iyy="${m*(3*r*r+h*h)/12}" iyz = "0"
+                 izz="${m*r*r/2}" /> 
+    </xacro:macro>
+
+    <link name="base_footprint">
+        <inertial>
+          <mass value="0.0001" />
+          <origin xyz="0 0 0" />
+          <inertia ixx="0.0001" ixy="0.0" ixz="0.0"
+              iyy="0.0001" iyz="0.0" 
+              izz="0.0001" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.001 0.001 0.001" />
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <box size="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+    </link>
+    
+    <joint name="base_joint" type="fixed">
+        <origin xyz="0 0 ${wheel_radius - base_z_origin_to_wheel_origin}" rpy="0 0 0" />
+        <parent link="base_footprint"/>
+        <child link="base_f1_link" />
+    </joint>
+
+    <link name="base_f1_link">
+        <inertial>
+            <mass value="${base_f1_mass}"/>
+            <origin xyz="0 0 0"/>
+            <inertia ixx="0.0001" ixy="0" ixz="0" 
+                     iyy="0.0001" iyz="0" 
+                     izz="0.0001"/>
+            <cylinder_inertia m="${base_f1_mass}" r="${base_f1_radius}" h="${base_f1_height}"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 ${wheel_height/3}" rpy="0 0 0"/>
+            <geometry>
+                <cylinder length="${base_f1_height}" radius="${base_f1_radius}"/>
+            </geometry>
+            <material name="Yellow"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 ${wheel_height/3}" rpy="0 0 0"/>
+            <geometry>
+                <cylinder length="${base_f1_height}" radius="${base_f1_radius}"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="base_pillar1_f1_joint" type="fixed">
+        <origin xyz="0 0 ${wheel_height}" rpy="0 0 0"/>
+        <parent link="base_f1_link"/>
+        <child link="pillar1_f1_link"/>
+    </joint>
+
+    <link name="pillar1_f1_link">
+        <visual>
+            <origin xyz="${base_f1_radius*0.8} 0 ${wheel_height}" rpy="0 0 0"/>
+            <geometry>
+                <cylinder length="${pillar_height}" radius="${pillar_radius}"/>
+            </geometry>
+            <material name="Yellow"/>
+        </visual>
+        <collision>
+            <origin xyz="${base_f1_radius*0.8} 0 ${wheel_height}" rpy="0 0 0"/>
+            <geometry>
+                <cylinder length="${pillar_height}" radius="${pillar_radius}"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="base_pillar2_f1_joint" type="fixed">
+        <origin xyz="0 0 ${wheel_height}" rpy="0 0 0"/>
+        <parent link="base_f1_link"/>
+        <child link="pillar2_f1_link"/>
+    </joint>
+
+    <link name="pillar2_f1_link">
+        <visual>
+            <origin xyz="${-base_f1_radius*0.4} ${base_f1_radius*0.688} ${wheel_height}" rpy="0 0 0"/>
+            <geometry>
+                <cylinder length="${pillar_height}" radius="${pillar_radius}"/>
+            </geometry>
+            <material name="Yellow"/>
+        </visual>
+        <collision>
+            <origin xyz="${-base_f1_radius*0.4} ${base_f1_radius*0.688} ${wheel_height}" rpy="0 0 0"/>
+            <geometry>
+                <cylinder length="${pillar_height}" radius="${pillar_radius}"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="base_pillar3_f1_joint" type="fixed">
+        <origin xyz="0 0 ${wheel_height}" rpy="0 0 0"/>
+        <parent link="base_f1_link"/>
+        <child link="pillar3_f1_link"/>
+    </joint>
+
+    <link name="pillar3_f1_link">
+        <visual>
+            <origin xyz="${-base_f1_radius*0.4} ${-base_f1_radius*0.688} ${wheel_height}" rpy="0 0 0"/>
+            <geometry>
+                <cylinder length="${pillar_height}" radius="${pillar_radius}"/>
+            </geometry>
+            <material name="Yellow"/>
+        </visual>
+        <collision>
+            <origin xyz="${-base_f1_radius*0.4} ${-base_f1_radius*0.688} ${wheel_height}" rpy="0 0 0"/>
+            <geometry>
+                <cylinder length="${pillar_height}" radius="${pillar_radius}"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="base_f2_joint"  type="fixed">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <parent link="pillar1_f1_link"/>
+        <parent link="pillar2_f1_link"/>
+        <parent link="pillar3_f1_link"/>
+        <child link="base_f2_link"/>
+    </joint>
+
+    <link name="base_f2_link">
+        <inertial>
+            <mass value="${base_f2_mass}"/>
+            <origin xyz="0 0 0"/>
+            <inertia ixx="0.0001" ixy="0" ixz="0" 
+                     iyy="0.0001" iyz="0" 
+                     izz="0.0001"/>
+            <cylinder_inertia m="${base_f2_mass}" r="${base_f2_radius}" h="${base_f2_height}"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 ${pillar_height - 2*wheel_height/3}" rpy="0 0 0"/>
+            <geometry>
+                <cylinder length="${base_f2_height}" radius="${base_f2_radius}"/>
+            </geometry>
+            <material name="Yellow"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 ${pillar_height - 2*wheel_height/3}" rpy="0 0 0"/>
+            <geometry>
+                <cylinder length="${base_f2_height}" radius="${base_f2_radius}"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="left_wheel_joint" type="continuous">
+        <origin xyz="0 0 0" 
+                rpy="${-base_x_origin_to_wheel_origin} 
+                     ${base_y_origin_to_wheel_origin}
+                     ${base_z_origin_to_wheel_origin}"/>
+        <parent link="base_f1_link"/>
+        <parent link="base_footprint"/>
+        <child link="left_wheel"/>
+        <axis xyz="1 1 0" rpy="0 0 0"/>
+        <limit effort="100" velocity="100"/>
+        <joint_properties damping="0.0" friction="0.0"/>
+    </joint>
+
+    <link name="left_wheel">
+        <visual>
+            <origin xyz="${0.4*base_f1_radius} ${-0.85*base_f1_radius} 0" 
+                    rpy="${M_PI_2} 0 ${M_PI_2/3}"/>
+            <geometry>
+                <cylinder length="${wheel_height}" radius="${wheel_radius}"/>
+            </geometry>
+            <material name="Black"/>
+        </visual>
+        <collision>
+            <origin xyz="${0.4*base_f1_radius} ${-0.85*base_f1_radius} 0" 
+                    rpy="${M_PI_2} 0 ${M_PI_2/3}"/>
+            <geometry>
+                <cylinder length="${wheel_height}" radius="${wheel_radius}"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="${wheel_mass}"/>
+            <origin xyz="0 0 0"/>
+            <inertia ixx="0.0001" ixy="0" ixz="0" 
+                     iyy="0.0001" iyz="0" 
+                     izz="0.0001"/>
+            <cylinder_inertia m="${wheel_mass}" r="${wheel_radius}" h="${wheel_height}"/>
+        </inertial>
+    </link>
+    <!-- Transmission wheel left -->
+    <transmission name="left_wheel_joint_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="left_wheel_joint"/>
+        <actuator name="left_wheel_joint_motor">
+          <hardwareInterface>EffortJointInterface</hardwareInterface>
+          <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <joint name="right_wheel_joint" type="continuous">
+        <origin xyz="0 0 0" 
+                rpy="${base_x_origin_to_wheel_origin} 
+                     ${base_y_origin_to_wheel_origin}
+                     ${base_z_origin_to_wheel_origin}"/>
+        <parent link="base_f1_link"/>
+        <parent link="base_footprint"/>
+        <child link="right_wheel"/>
+        <axis xyz="1 1 0" rpy="0 0 0"/>
+        <limit effort="100" velocity="100"/>
+        <joint_properties damping="0.0" friction="0.0"/>
+    </joint>
+
+    <link name="right_wheel">
+        <visual>
+            <origin xyz="${0.4*base_f1_radius} ${0.85*base_f1_radius} 0" 
+                    rpy="${M_PI_2} 0 ${-M_PI_2/3}"/>
+            <geometry>
+                <cylinder length="${wheel_height}" radius="${wheel_radius}"/>
+            </geometry>
+            <material name="Black"/>
+        </visual>
+        <collision>
+            <origin xyz="${0.4*base_f1_radius} ${0.85*base_f1_radius} 0" 
+                    rpy="${M_PI_2} 0 ${-M_PI_2/3}"/>
+            <geometry>
+                <cylinder length="${wheel_height}" radius="${wheel_radius}"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="${wheel_mass}"/>
+            <origin xyz="0 0 0"/>
+            <inertia ixx="0.0001" ixy="0" ixz="0" 
+                     iyy="0.0001" iyz="0" 
+                     izz="0.0001"/>
+            <cylinder_inertia m="${wheel_mass}" r="${wheel_radius}" h="${wheel_height}"/>
+        </inertial>
+    </link>
+    <!-- Transmission wheel left -->
+    <transmission name="right_wheel_joint_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="right_wheel_joint"/>
+        <actuator name="right_wheel_joint_motor">
+          <hardwareInterface>EffortJointInterface</hardwareInterface>
+          <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <joint name="back_wheel_joint" type="continuous">
+        <origin xyz="0 0 0" rpy="0 0 ${base_z_origin_to_wheel_origin}"/>
+        <parent link="base_f1_link"/>
+        <parent link="base_footprint"/>
+        <child link="back_wheel"/>
+        <axis xyz="0 1 0" rpy="0 0 0"/>
+        <limit effort="100" velocity="100"/>
+        <joint_properties damping="0.0" friction="0.0"/>
+    </joint>
+
+    <link name="back_wheel">
+        <visual>
+            <origin xyz="${-0.95*base_f1_radius} 0 0" 
+                    rpy="0 ${M_PI_2} 0"/>
+            <geometry>
+                <cylinder length="${wheel_height}" radius="${wheel_radius}"/>
+            </geometry>
+            <material name="Black"/>
+        </visual>
+        <collision>
+            <origin xyz="${-0.95*base_f1_radius} 0 0" 
+                    rpy="0 ${M_PI_2} 0"/>
+            <geometry>
+                <cylinder length="${wheel_height}" radius="${wheel_radius}"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="${wheel_mass}"/>
+            <origin xyz="0 0 0"/>
+            <inertia ixx="0.0001" ixy="0" ixz="0" 
+                     iyy="0.0001" iyz="0" 
+                     izz="0.0001"/>
+            <cylinder_inertia m="${wheel_mass}" r="${wheel_radius}" h="${wheel_height}"/>
+        </inertial>
+    </link>
+
+    <!-- Transmission wheel left -->
+    <transmission name="back_wheel_joint_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="back_wheel_joint"/>
+        <actuator name="back_wheel_joint_motor">
+          <hardwareInterface>EffortJointInterface</hardwareInterface>
+          <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+
+    <joint name="rplidar_joint" type="fixed">
+        <parent link="base_f2_link"/>
+        <child link="laser"/>
+        <axis xyz="0 0 0"/>
+        <origin xyz="0.12 0 0" rpy="0 0 0"/>
+    </joint>
+
+    <link name="laser">
+        <visual>
+            <origin xyz="0 0 ${pillar_height - wheel_height/3}" rpy="0 0 0"/>
+            <geometry>
+                <cylinder length="${lidar_height}" radius="${lidar_radius}"/>
+            </geometry>
+            <material name="Red"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 ${pillar_height - wheel_height/3}" rpy="0 0 0"/>
+            <geometry>
+                <cylinder length="${lidar_height}" radius="${lidar_radius}"/>
+            </geometry>
+        </collision>
+        <vision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <cylinder length="${lidar_height}" radius="${lidar_radius}"/>
+            </geometry>
+            <material name="Blue"/>
+        </vision>
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="${lidar_mass}"/>
+            <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
+            <cylinder_inertia m="${lidar_mass}" r="${lidar_radius}" h="${lidar_height}"/>
+        </inertial>
+    </link>
+
+    <link name="imu_link">
+
+    </link>
+
+    <joint name="imu_joint" type="fixed">
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <parent link="base_f2_link"/>
+        <child link="imu_link"/>
+    </joint>
+
+</robot>
