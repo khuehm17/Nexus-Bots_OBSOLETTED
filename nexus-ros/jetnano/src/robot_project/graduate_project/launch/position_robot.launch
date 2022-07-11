@@ -6,12 +6,17 @@
   <remap from="/imu_data" to="/imu/data"/>
   <include file="$(find robot_pose)/launch/robot_pose.launch"/>
   <remap from="/initialpose" to="robot_pose_ekf/odom_combined"/>
+  <!-- Display robot model-->
+  <include file="$(find robot_omni_3wheel)/launch/robot_omni_model.launch"/> 
 
   <!-- Transform data component of omni_robot-->
+  <!-- 
   <group> 
     <node pkg="tf" type="static_transform_publisher" name="map_to_odom" args="0 0 0 0 0 0 map odom 30" />
     <node pkg="tf" type="static_transform_publisher" name="base_link_broadcaster" args="0 0 0.06 0 0 0 base_footprint omni_robot 30" />
     <node pkg="tf" type="static_transform_publisher" name="omni_to_imu" args="0 0 0.06 0 0 0 omni_robot imu_link 50"/> 
     <node pkg="tf" type="static_transform_publisher" name="base_link_to_laser" args="0.06 0.0 0 0 0 0 omni_robot laser 30" />
   </group>
+  -->
+  
 </launch>

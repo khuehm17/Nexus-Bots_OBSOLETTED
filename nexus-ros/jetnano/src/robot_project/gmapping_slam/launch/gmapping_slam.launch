@@ -7,7 +7,7 @@
 <!-- Defining parameters for slam_gmapping node --> 
   <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen"> 
     <!-- <param name="base_frame" value="base_footprint"/> -->
-    <param name="base_frame" value="omni_robot"/>
+    <param name="base_frame" value="base_footprint"/>
     <param name="odom_frame" value="odom"/> 
     <param name="map_frame" value="map"/>
     <param name="map_update_interval" value="2.0"/> 
@@ -44,4 +44,5 @@
     <param name="lasamplestep" value="0.005"/> 
     <remap from="scan" to="$(arg scan_topic)"/> 
   </node> 
+  <!-- <node name="rviz_gmapping" pkg="rviz" type="rviz" args="-d $(find gmapping_slam)/config/mapping.rviz"/> -->
 </launch> 

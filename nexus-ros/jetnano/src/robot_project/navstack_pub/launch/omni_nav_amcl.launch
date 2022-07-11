@@ -5,5 +5,5 @@
   <include file="$(find rplidar_ros)/launch/rplidar.launch"/>
   <include file="$(find navstack_pub)/launch/amcl.launch"/>
   <include file="$(find graduate_project)/launch/position_robot.launch"/>
-  <!-- <node name="rviz_navstack" pkg="rviz" type="rviz"/> -->
+  <node name="rviz_navstack" pkg="rviz" type="rviz" args="-d $(find navstack_pub)/config/navigate_stack.rviz"/> 
 </launch>

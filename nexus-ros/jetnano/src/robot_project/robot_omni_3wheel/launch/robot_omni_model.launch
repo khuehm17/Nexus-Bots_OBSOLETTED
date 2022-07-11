@@ -9,4 +9,5 @@
   <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen">
     <param name="publisher_frequency" type="double" value="50.0"/>  
   </node>
+  <!-- <node name="rviz_model" pkg="rviz" type="rviz" args="-d $(find robot_omni_3wheel)/config/rviz_model.rviz"/> -->
 </launch>

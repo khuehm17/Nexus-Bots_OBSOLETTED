@@ -113,12 +113,6 @@
             </geometry>
             <material name="Yellow"/>
         </visual>
-        <collision>
-            <origin xyz="0 0 ${wheel_height/3}" rpy="0 0 0"/>
-            <geometry>
-                <cylinder length="${base_f1_height}" radius="${base_f1_radius}"/>
-            </geometry>
-        </collision>
     </link>
 
     <joint name="base_pillar1_f1_joint" type="fixed">
@@ -135,12 +129,6 @@
             </geometry>
             <material name="Yellow"/>
         </visual>
-        <collision>
-            <origin xyz="${base_f1_radius*0.8} 0 ${wheel_height}" rpy="0 0 0"/>
-            <geometry>
-                <cylinder length="${pillar_height}" radius="${pillar_radius}"/>
-            </geometry>
-        </collision>
     </link>
 
     <joint name="base_pillar2_f1_joint" type="fixed">
@@ -157,12 +145,6 @@
             </geometry>
             <material name="Yellow"/>
         </visual>
-        <collision>
-            <origin xyz="${-base_f1_radius*0.4} ${base_f1_radius*0.688} ${wheel_height}" rpy="0 0 0"/>
-            <geometry>
-                <cylinder length="${pillar_height}" radius="${pillar_radius}"/>
-            </geometry>
-        </collision>
     </link>
 
     <joint name="base_pillar3_f1_joint" type="fixed">
@@ -179,12 +161,7 @@
             </geometry>
             <material name="Yellow"/>
         </visual>
-        <collision>
-            <origin xyz="${-base_f1_radius*0.4} ${-base_f1_radius*0.688} ${wheel_height}" rpy="0 0 0"/>
-            <geometry>
-                <cylinder length="${pillar_height}" radius="${pillar_radius}"/>
-            </geometry>
-        </collision>
+
     </link>
 
     <joint name="base_f2_joint"  type="fixed">
@@ -211,15 +188,9 @@
             </geometry>
             <material name="Yellow"/>
         </visual>
-        <collision>
-            <origin xyz="0 0 ${pillar_height - 2*wheel_height/3}" rpy="0 0 0"/>
-            <geometry>
-                <cylinder length="${base_f2_height}" radius="${base_f2_radius}"/>
-            </geometry>
-        </collision>
     </link>
 
-    <joint name="left_wheel_joint" type="continuous">
+    <joint name="left_wheel_joint" type="fixed">
         <origin xyz="0 0 0" 
                 rpy="${-base_x_origin_to_wheel_origin} 
                      ${base_y_origin_to_wheel_origin}
@@ -254,20 +225,10 @@
             <inertia ixx="0.0001" ixy="0" ixz="0" 
                      iyy="0.0001" iyz="0" 
                      izz="0.0001"/>
-            <cylinder_inertia m="${wheel_mass}" r="${wheel_radius}" h="${wheel_height}"/>
         </inertial>
     </link>
-    <!-- Transmission wheel left -->
-    <transmission name="left_wheel_joint_trans">
-        <type>transmission_interface/SimpleTransmission</type>
-        <joint name="left_wheel_joint"/>
-        <actuator name="left_wheel_joint_motor">
-          <hardwareInterface>EffortJointInterface</hardwareInterface>
-          <mechanicalReduction>1</mechanicalReduction>
-        </actuator>
-    </transmission>
 
-    <joint name="right_wheel_joint" type="continuous">
+    <joint name="right_wheel_joint" type="fixed">
         <origin xyz="0 0 0" 
                 rpy="${base_x_origin_to_wheel_origin} 
                      ${base_y_origin_to_wheel_origin}
@@ -302,20 +263,10 @@
             <inertia ixx="0.0001" ixy="0" ixz="0" 
                      iyy="0.0001" iyz="0" 
                      izz="0.0001"/>
-            <cylinder_inertia m="${wheel_mass}" r="${wheel_radius}" h="${wheel_height}"/>
         </inertial>
     </link>
-    <!-- Transmission wheel left -->
-    <transmission name="right_wheel_joint_trans">
-        <type>transmission_interface/SimpleTransmission</type>
-        <joint name="right_wheel_joint"/>
-        <actuator name="right_wheel_joint_motor">
-          <hardwareInterface>EffortJointInterface</hardwareInterface>
-          <mechanicalReduction>1</mechanicalReduction>
-        </actuator>
-    </transmission>
 
-    <joint name="back_wheel_joint" type="continuous">
+    <joint name="back_wheel_joint" type="fixed">
         <origin xyz="0 0 0" rpy="0 0 ${base_z_origin_to_wheel_origin}"/>
         <parent link="base_f1_link"/>
         <parent link="base_footprint"/>
@@ -347,19 +298,8 @@
             <inertia ixx="0.0001" ixy="0" ixz="0" 
                      iyy="0.0001" iyz="0" 
                      izz="0.0001"/>
-            <cylinder_inertia m="${wheel_mass}" r="${wheel_radius}" h="${wheel_height}"/>
         </inertial>
     </link>
-
-    <!-- Transmission wheel left -->
-    <transmission name="back_wheel_joint_trans">
-        <type>transmission_interface/SimpleTransmission</type>
-        <joint name="back_wheel_joint"/>
-        <actuator name="back_wheel_joint_motor">
-          <hardwareInterface>EffortJointInterface</hardwareInterface>
-          <mechanicalReduction>1</mechanicalReduction>
-        </actuator>
-    </transmission>
 
     <joint name="rplidar_joint" type="fixed">
         <parent link="base_f2_link"/>

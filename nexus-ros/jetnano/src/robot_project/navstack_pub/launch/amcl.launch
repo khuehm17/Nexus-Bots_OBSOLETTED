@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <launch>
-  <arg name="map_file" default="$(find gmapping_slam)/map/map_demo05.yaml"/>
+  <arg name="map_file" default="$(find gmapping_slam)/map/map_demo09.yaml"/>
   <!-- Load the map is saved-->
   <node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)"/>
 
